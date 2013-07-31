@@ -1,0 +1,29 @@
+/* Models created:
+
+Table 1: Item
+
+duke_price:decimal unit:string category:string subcategory:string image:string active:string
+
+attr_accessible :name, :selling_price, :supply_price, :duke_price, :unit, :category,
+	:subcategory, :image, :active
+
+Table 2: Unit 
+
+rails g model unit unit_name:string
+
+Table 3: Category
+
+rails g model category category_name:string
+
+Table 4: Subcategory
+
+rails g model subcategory subcategory_name:string
+
+Table 5: Order
+
+rails g model order user_id:string campus:string building:string room:string email:string phone:string order_id:integer date:date time:time status:string
+
+attr_accessible :user_id, :campus, :building, :room, :email, :phone, :order_id, :date, :time, :status
+
+
+*/

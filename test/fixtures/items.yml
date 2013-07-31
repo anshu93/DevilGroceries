@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  selling_price: 9.99
+  supply_price: 9.99
+  duke_price: 9.99
+  unit: MyString
+  category: MyString
+  subcategory: MyString
+  image: MyString
+  active: MyString
+
+two:
+  name: MyString
+  selling_price: 9.99
+  supply_price: 9.99
+  duke_price: 9.99
+  unit: MyString
+  category: MyString
+  subcategory: MyString
+  image: MyString
+  active: MyString
