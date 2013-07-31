@@ -27,10 +27,25 @@ ActiveAdmin.register Order do
 	end
 
 	show :title => :user_id do
-		panel "Order Details" do
+		panel "Order details" do
+			attributes_table_for order do
+				row("user") { order.user_id }
+				row("room") { order.room }
+				row("building") { order.building }
+				row("campus") { order.campus }
+				row("phone number") { order.phone }
+				row("time ordered") { order.time }
+				row("date ordered") { order.date }
+				row("status") { order.status }
+			end
+		end
+		panel "Ordered Items" do
 			table_for order.orderitemrelations do 
 				column "item" do |orderitemrelation|
 					orderitemrelation.item.name
+				end
+				column "quantity" do |orderitemrelation|
+					orderitemrelation.quantity
 				end
 				column "unit" do |orderitemrelation|
 					orderitemrelation.item.unit.unit_name
