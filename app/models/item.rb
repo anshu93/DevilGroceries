@@ -6,6 +6,5 @@ class Item < ActiveRecord::Base
 	belongs_to :subcategory
 	has_many :orders, :through => :orderitemrelations
 	has_many :orderitemrelations
-
 	ITEM_STATUS = ['active', 'inactive']
 end

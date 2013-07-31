@@ -3,4 +3,9 @@ class Order < ActiveRecord::Base
 	has_many :items, :through => :orderitemrelations
 	has_many :orderitemrelations
 	ORDER_STATUS = ['DELIVERED', 'UNDELIVERED', 'ATTEMPTED']
+	CAMPUS = ['West', 'East', 'Central']
+	BUILDING = ['Few', 'Kilgo', 'Edens']
+	def display_name
+		id 
+	end	
 end
