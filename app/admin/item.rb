@@ -5,10 +5,13 @@ ActiveAdmin.register Item do
 		column :supply_price
 		column :duke_price
 		column :active
-		default_actions
+		column "Image" do |item|
+			link_to(image_tag(item.image.url(), :height => '100' ), admin_item_path(item))
+		end
+ 		default_actions
 	end
 
-	form do |f|
+	form :html => { :enctype => "multipart/form-data" } do |f|
 		f.inputs "Item details" do
 			f.input :name
 			f.input :selling_price
@@ -18,6 +21,7 @@ ActiveAdmin.register Item do
 			f.input :subcategory
 			f.input :unit
 			f.input :active, :label => "status", :as => :select, :collection => Item::ITEM_STATUS
+			f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url(:original))
 		end
 		f.buttons
 	end

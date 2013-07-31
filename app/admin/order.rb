@@ -8,10 +8,20 @@ ActiveAdmin.register Order do
 		column :building
 		column :room
 		column :phone
+		column :email
 		column :date
 		column :time
 		column :status
+		column :cart_status
 		default_actions
+	end
+
+	scope :confirmed_order, :default => true do |order|
+		order.where( :cart_status => "confirmed")
+	end
+	scope :all
+	scope :cart_orders do |order|
+		order.where( :cart_status => "pending" )
 	end
 
 	form do |f|
@@ -21,7 +31,10 @@ ActiveAdmin.register Order do
 			f.input :building, :label => "building", :as => :select, :collection => Order::BUILDING
 			f.input :room
 			f.input :phone
+			f.input :email
 			f.input :status, :label => "STATUS", :as => :select, :collection => Order::ORDER_STATUS
+			f.input :cart_status, :label => "CART STATUS", :as => :select, :collection => Order::CART_STATUS
+
 		end
 		f.buttons
 	end

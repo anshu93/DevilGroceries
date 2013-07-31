@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-	attr_accessible :user_id, :campus, :building, :room, :email, :phone, :date, :time, :status
+	attr_accessible :user_id, :campus, :building, :room, :email, :phone, :date, :time, :status, :cart_status
 	has_many :items, :through => :orderitemrelations
 	has_many :orderitemrelations
 	ORDER_STATUS = ['DELIVERED', 'UNDELIVERED', 'ATTEMPTED']
@@ -8,4 +8,5 @@ class Order < ActiveRecord::Base
 	def display_name
 		id 
 	end	
+	CART_STATUS = ['pending', 'confirmed']
 end
