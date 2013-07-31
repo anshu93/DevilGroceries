@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-	attr_accessible :category_name
+	attr_accessible :id, :category_name
 	has_many :items
 	has_many :subcategories
 	def display_name

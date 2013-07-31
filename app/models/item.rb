@@ -4,4 +4,8 @@ class Item < ActiveRecord::Base
 	belongs_to :category
 	belongs_to :unit
 	belongs_to :subcategory
+	has_many :orders, :through => :orderitemrelations
+	has_many :orderitemrelations
+
+	ITEM_STATUS = ['active', 'inactive']
 end
