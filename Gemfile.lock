@@ -131,7 +131,6 @@ GEM
     mime-types (1.23)
     minitest (4.7.5)
     multi_json (1.7.7)
-    newrelic_rpm (3.6.6.147)
     orm_adapter (0.4.0)
     paperclip (3.5.1)
       activemodel (>= 3.0.0)
@@ -213,7 +212,6 @@ DEPENDENCIES
   inherited_resources!
   jquery-rails
   kaminari
-  newrelic_rpm
   paperclip (~> 3.0)
   pg
   protected_attributes
