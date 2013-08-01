@@ -18,10 +18,10 @@ group :production do
 	gem 'newrelic_rpm'
 end
 
-
+	 
 	gem 'sass-rails'
 	gem 'coffee-rails', '~> 4.0.0'
-	# gem 'coffee-script-source', '~> 1.4.0' # ADD THIS LINE, 1.5.0 doesn't compile ActiveAdmin JavaScript files
+	gem 'coffee-script-source', '~> 1.4.0' # ADD THIS LINE, 1.5.0 doesn't compile ActiveAdmin JavaScript files
 	gem 'uglifier', '>= 1.3.0'
 
 
