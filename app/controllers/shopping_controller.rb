@@ -15,9 +15,9 @@ class ShoppingController < ApplicationController
 			@item = Subcategory.find(params[:subcategory_id]).items.order("RANDOM()")
 		end
 		unless @item.kind_of?(Array)
-			@item = @item.page(params[:page]).per(2)
+			@item = @item.page(params[:page]).per(18)
 		else
-			@item = Kaminari.paginate_array(@item).page(params[:page]).per(2)
+			@item = Kaminari.paginate_array(@item).page(params[:page]).per(18)
 		end
 		render :partial => 'result', :content_type => 'text/html'
 	end

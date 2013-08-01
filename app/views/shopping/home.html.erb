@@ -23,7 +23,7 @@
 			<h1>Categories</h1>
 			<ul>
 				<li>
-					<%= link_to(shopping_result_path(:category_id => -1), {:remote => true, :'data-update-target' => "result", :class => "categories"}) do %>
+					<%= link_to(shopping_result_path(:category_id => -1), {:remote => true, :'data-update-target' => "result", :class => "categories", :id => "all_items"}) do %>
 					All Items
 					<% end %>
 				</li>
@@ -73,5 +73,10 @@
 	<script src="shopping/home/js/classie.js"></script>
 	<script src="shopping/home/js/cbpViewModeSwitch.js"></script>
 	<script src="shopping/home/js/cart_ajax.js"></script>
+	<script>
+    jQuery(function(){
+      jQuery('#all_items').click();
+    });
+	</script>
 		<!-- JS end -->
 </body>
