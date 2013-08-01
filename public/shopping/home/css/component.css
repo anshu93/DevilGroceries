@@ -1,3 +1,8 @@
+/* Loader */
+.loader {
+
+}
+
 /* Sidebar and Main */
 .sidebar {
 	float: left;
@@ -99,9 +104,9 @@
 
 /* Main */
 /* Main container */
+
 .cart-container {
 	float: left;
-	#background: #ccc;
 	height: 40px;
 	padding-top: 9px;
 }
@@ -118,6 +123,7 @@
 .cbp-vm-switcher {
 	padding: 1em;
 	border: 3px solid #081e4f;
+	min-height: 700px;
 }
 
 /* options/select wrapper with switch anchors */
@@ -200,7 +206,7 @@
 	background: #47a3da;
 	padding: 10px 20px;
 	border-radius: 2px;
-	margin: 20px 0 0;
+	margin: 10px 0 10px;
 	display: inline-block;
 	transition: background 0.2s;
 }
@@ -246,28 +252,46 @@
 }
 
 .cbp-vm-view-grid ul li {
-	width: 33%;
+	#width: 33%;
 	text-align: center;
-	padding: 25px;
+	padding: 15px;
 	margin: 20px 0 0;
 	display: inline-block;
-	min-height: 420px;
+	height: 330px;
+	width: 300px;
 	vertical-align: top;
 }
 
+.cbp-vm-grid .cbp-vm-image {
+	max-height: 160px;
+	max-width: 270px;
+}
+
 .cbp-vm-view-grid .cbp-vm-title {
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.cbp-vm-title {
 	font-size: 2em;
 }
 
 .cbp-vm-view-grid .cbp-vm-details {
-	max-width: 300px;
-	min-height: 70px;
+	max-width: 270px;
+	height: 20px;
+	margin: 0 auto;
+} 
+
+.cbp-vm-details {
+	max-width: 270px;
+	height: 20px;
 	margin: 0 auto;
 } 
 
 .cbp-vm-view-grid .cbp-vm-price {
 	margin: 10px 0;
-	font-size: 1.5em;
+	font-size: 24px;
+	line-height: 24px;
 }
 
 

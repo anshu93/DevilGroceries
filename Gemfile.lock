@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ernie/ransack.git
-  revision: 3299f3aeaf5ce0a264f194daa0bec86919dfad82
+  revision: 39da31f8ac8f8a9852a217bebc494548f9bb89c3
   branch: rails-4
   specs:
     ransack (0.7.3)
@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: git://github.com/josevalim/inherited_resources.git
-  revision: 6d451d4bb2026b6c1920ba15838adb4d4b2aa3a4
+  revision: ae1516a3f1a01f98beac3334f76831a1c793c521
   specs:
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
@@ -134,7 +134,7 @@ GEM
     minitest (4.7.5)
     multi_json (1.7.7)
     orm_adapter (0.4.0)
-    paperclip (3.5.0)
+    paperclip (3.5.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
@@ -208,6 +208,7 @@ DEPENDENCIES
   inherited_resources!
   jbuilder (~> 1.2)
   jquery-rails
+  kaminari
   paperclip (~> 3.0)
   protected_attributes
   rails (= 4.0.0)

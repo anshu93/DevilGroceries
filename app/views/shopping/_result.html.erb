@@ -1,0 +1,16 @@
+<ul>
+	<% @item.each do |item| %>
+	<li>
+		<a class="cbp-vm-image" href="#"><%= image_tag item.image.url %></a>
+		<h3 class="cbp-vm-title"><%= item.name %></h3>
+		<div class="cbp-vm-price">$<%= item.selling_price %></div>
+		<div class="cbp-vm-details">
+			<% unless item.duke_price.blank? %>
+			<strike>$<%= item.duke_price %> at Duke</strike>
+			<% end %>
+		</div>
+		<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
+	</li>
+	<% end %>
+	<%= paginate @item, :window => 2, :remote => true  %>
+</ul>
