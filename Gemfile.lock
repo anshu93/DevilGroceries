@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: a0d387324db1b30c3e5c66c626dbc76f6e40cfe8
+  revision: a9949c1524205928b18597f840e83478ba97c2ef
   branch: rails4
   specs:
     activeadmin (0.6.0)
