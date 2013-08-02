@@ -22,8 +22,10 @@ module Gro
 
     # For devise
     config.assets.initialize_on_precompile = false
+    Bundler.require(:default, :assets, Rails.env)
+
 
     # Precompile additional assets. Defaults to [application.js, application.css, non-JS/CSS]
-    config.assets.precompile += ['active_admin.css.scss', 'active_admin.js'] 
+    #config.assets.precompile += ['active_admin.css.scss', 'active_admin.js'] 
 end
 end
