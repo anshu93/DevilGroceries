@@ -77,4 +77,13 @@ Gro::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => 'groceries-pictures',
+    :access_key_id => 'AKIAJQWVECXV7QRAYIAA',
+    :secret_access_key => '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'
+  }
+}
 end
