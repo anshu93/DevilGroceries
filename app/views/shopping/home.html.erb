@@ -5,7 +5,9 @@
 </head>
 <body>
 
-	<!-- Container -->
+	<div class = "cart-dropdown">
+		<a href='#' id = "close-button">close</a>
+	</div>
 	<div class="container">
 		<!-- Header -->
 		<header class="clearfix">
@@ -53,7 +55,7 @@
 		<div class="main">
 			<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
 				<div class = "cart-container">
-					<a href = "#" class = "cart">Shopping Cart &nbsp<i class="icon icon-shopping-cart"></i> <span id="cart-count">(<%= @relation %>)</span></a>
+					<a href = "#" class = "cart" id = "cart-id">Shopping Cart &nbsp<i class="icon icon-shopping-cart"></i> <span id="cart-count">(<%= @relation %>)</span></a>
 				</div>
 				<div class="cbp-vm-options">
 					<a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid">Grid View</a>
@@ -73,6 +75,7 @@
 	<script src="shopping/home/js/classie.js"></script>
 	<script src="shopping/home/js/cbpViewModeSwitch.js"></script>
 	<script src="shopping/home/js/cart_ajax.js"></script>
+	<script src="shopping/home/js/cart-dropdown.js"></script>
 	<script>
     jQuery(function(){
       jQuery('#all_items').click();

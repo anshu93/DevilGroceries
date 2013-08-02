@@ -1,3 +1,23 @@
+/* Cart Dropdown */
+
+.cart-dropdown {
+	height: 500px;
+	width: 500px;
+	border: solid;
+	opacity: 1;
+	background: #fff;
+	position: fixed;
+	display: none;
+	left: 50%;
+	margin-left: -250px;
+	z-index: 9999;
+	overflow-y: scroll; 
+}
+
+.hide {
+	display: none;
+}
+
 /* Loader */
 .loader {
 	display: block;
@@ -191,6 +211,7 @@
 
 .cbp-vm-image img {
 	display: inline-block;
+	max-height: 140px;
 	max-width: 100%;
 	border: none;
 }
@@ -255,12 +276,11 @@
 }
 
 .cbp-vm-view-grid ul li {
-	#width: 33%;
 	text-align: center;
 	padding: 15px;
 	margin: 20px 0 0;
 	display: inline-block;
-	height: 330px;
+	height: 285px;
 	width: 300px;
 	vertical-align: top;
 }
@@ -268,6 +288,11 @@
 .cbp-vm-grid .cbp-vm-image {
 	max-height: 160px;
 	max-width: 270px;
+}
+
+.cbp-vm-grid > img  {
+	height: 100px;
+	width: auto;
 }
 
 .cbp-vm-view-grid .cbp-vm-title {
