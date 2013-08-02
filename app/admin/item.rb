@@ -1,5 +1,6 @@
 ActiveAdmin.register Item do
 	index do
+		selectable_column
 		column :name
 		column :selling_price
 		column :supply_price

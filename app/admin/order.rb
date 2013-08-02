@@ -1,5 +1,6 @@
 ActiveAdmin.register Order do
 	index do
+		selectable_column
 		column :id 
 		column :user_id do |order|
 			link_to order.user_id, admin_order_path(order)
