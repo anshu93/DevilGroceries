@@ -38,7 +38,7 @@ class ShoppingController < ApplicationController
 			end
 		end
 		if present == false
-			order = Order.create(:user_id => ip, :cat_status => "pending")
+			order = Order.create(:user_id => ip, :cart_status => "pending")
 			order.save
 		else
 			order = Order.where(user_id: ip).first
