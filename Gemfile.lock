@@ -219,6 +219,7 @@ DEPENDENCIES
   rails_12factor
   ransack!
   responders!
+  sass-rails
   sqlite3
   thin
   turbolinks

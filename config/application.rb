@@ -4,7 +4,8 @@ require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
-Bundler.require(*Rails.groups(:assets => %w(development test)))
+#Bundler.require(*Rails.groups(:assets => %w(development test)))
+    Bundler.require(:default, :assets, Rails.env)
 
 module Gro
   class Application < Rails::Application
@@ -22,7 +23,9 @@ module Gro
 
     # For devise
     config.assets.initialize_on_precompile = false
-    Bundler.require(:default, :assets, Rails.env)
+
+    config.assets.precompile += ['active_admin.css', 'active_admin.js.coffee'] 
+
 
 
     # Precompile additional assets. Defaults to [application.js, application.css, non-JS/CSS]
