@@ -9,7 +9,7 @@
 			<strike>$<%= item.duke_price %> at Duke</strike>
 			<% end %>
 		</div>
-		<a class="cbp-vm-icon cbp-vm-add" href="#">Add to cart</a>
+		<%= link_to("Add to cart", shopping_cart_path(:item_id => item.id), {:remote => true, :'data-update-target' => "cart-count", :class => "cbp-vm-icon cbp-vm-add"}) %>
 	</li>
 	<% end %>
 	<%= paginate @item, :window => 2, :remote => true  %>

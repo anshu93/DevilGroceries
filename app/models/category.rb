@@ -5,4 +5,5 @@ class Category < ActiveRecord::Base
 	def display_name
 		category_name
 	end
+	validates :category_name, presence: true
 end

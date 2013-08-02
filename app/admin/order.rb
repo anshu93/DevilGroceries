@@ -36,7 +36,7 @@ ActiveAdmin.register Order do
 			f.input :cart_status, :label => "CART STATUS", :as => :select, :collection => Order::CART_STATUS
 
 		end
-		f.buttons
+		f.actions
 	end
 
 	show :title => :user_id do

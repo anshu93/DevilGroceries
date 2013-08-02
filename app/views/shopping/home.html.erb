@@ -36,7 +36,7 @@
 						<% @subcategory.each do |subcategory| %>
 							<% if subcategory.category_id == category.id %>
 							<li>
-								<%= link_to(shopping_result_path(:subcategory_id => subcategory.id), {:remote => true, :'data-update-target' => "result"}) do %>
+								<%= link_to(shopping_result_path(:subcategory_id => subcategory.id), {:remote => true, :'data-update-target' => "result", :class => "subcategories"}) do %>
 								<i class="icon icon-caret-right"></i>
 								<%= subcategory.subcategory_name %>
 								<% end %>
@@ -53,7 +53,7 @@
 		<div class="main">
 			<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
 				<div class = "cart-container">
-					<a href = "#" class = "cart">Shopping Cart &nbsp<i class="icon icon-shopping-cart"></i></a>
+					<a href = "#" class = "cart">Shopping Cart &nbsp<i class="icon icon-shopping-cart"></i> <span id="cart-count">(<%= @relation %>)</span></a>
 				</div>
 				<div class="cbp-vm-options">
 					<a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid">Grid View</a>

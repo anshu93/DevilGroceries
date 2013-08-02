@@ -5,4 +5,5 @@ class Subcategory < ActiveRecord::Base
 	def display_name
 		subcategory_name
 	end
+	validates :subcategory_name, :category_id, presence: true
 end

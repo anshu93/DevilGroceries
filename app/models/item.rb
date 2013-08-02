@@ -8,5 +8,6 @@ class Item < ActiveRecord::Base
 	has_many :orderitemrelations
 	ITEM_STATUS = ['active', 'inactive']
 	has_attached_file :image
-	# validates_with AttachmentPresenceValidator, :attributes => :image
+	validates_with AttachmentPresenceValidator, :attributes => :image
+	validates :name, :selling_price, :supply_price, :category_id, :active, presence: true 
 end
