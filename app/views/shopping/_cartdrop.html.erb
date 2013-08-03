@@ -5,7 +5,7 @@
 		<% @list.each do |l| %>
 			<li>
 				<p><%= l.item.name %></p>
-				<p><%= l.item.unit_name %></p>
+				<p><%= l.item.unit_id %></p>
 				<p><%= number_field_tag("quantity", l.quantity) %></p>
 				<p><%= l.item.selling_price %></p>
 				<p><%= link_to("Delete", {:action => "delete_relation", :id => l.id}, {:remote => true, :id => "delete_relation"}) %></p>
