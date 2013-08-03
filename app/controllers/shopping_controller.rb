@@ -3,7 +3,7 @@ class ShoppingController < ApplicationController
 		@category = Category.all
 		@subcategory = Subcategory.all
 
-		ip = require 'JSON';require 'open-uri';puts open( 'http://jsonip.com/ ' ){ |s| JSON::parse( s.string())['ip'] };
+		ip = request.remote_ip
 		present = false
 		@relation = 0
 		Order.all.each do |o|
@@ -30,7 +30,7 @@ class ShoppingController < ApplicationController
 	end
 
 	def cart #Activated when the add to cart button is pressed
-		ip = require 'JSON';require 'open-uri';puts open( 'http://jsonip.com/ ' ){ |s| JSON::parse( s.string())['ip'] };
+		ip = request.remote_ip
 		present = false
 		Order.all.each do |o|
 			if o.user_id == ip
