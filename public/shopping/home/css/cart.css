@@ -48,3 +48,33 @@
 	padding-bottom: 1em;
 	color: #081e4f;
 }
+
+#cart-list > p {
+	width: 100%;
+	font-size: 1.5em;
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	margin: 2em auto;
+	color: #081e4f;
+}
+
+#cart-list > ul {
+	width: 100%;
+	list-style: none;
+	padding: 0;
+}
+
+#cart-list ul li {
+	width: 100%;
+	padding: 20px 0;
+	white-space: nowrap;
+}
+
+#cart-list ul li p {
+	display: inline-block;
+	vertical-align: middle;
+	width: 20%;
+	text-align: center;
+	margin: 0;
+}

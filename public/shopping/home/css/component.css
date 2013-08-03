@@ -251,6 +251,10 @@
 /* Individual view mode styles */
 
 /* Large grid view */
+.cbp-vm-view-grid {
+	padding-bottom: 2em;
+}
+
 .cbp-vm-view-grid ul {
 	text-align: center;
 }
