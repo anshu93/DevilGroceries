@@ -2,14 +2,11 @@ class ShoppingController < ApplicationController
 	def home
 		@category = Category.all
 		@subcategory = Subcategory.all
-
-		ip = request.remote_ip
-		present = false
-		@relation = 0
-		Order.all.each do |o|
-			if o.user_id == ip
-				@relation = Orderitemrelation.where(order_id: o.id).length
-			end
+		if cookies[:id] != nil
+			order_id = cookies[:id]
+			@relation = Order.find(order_id).orderitemrelations.length
+		else
+			@relation = 0
 		end
 	end
 
@@ -30,27 +27,22 @@ class ShoppingController < ApplicationController
 	end
 
 	def cart #Activated when the add to cart button is pressed
-		ip = request.remote_ip
-		present = false
-		Order.all.each do |o|
-			if o.user_id == ip
-				present = true
-			end
-		end
-		if present == false
-			order = Order.create(:user_id => ip, :cart_status => "pending")
-			order.save
+		if cookies[:id] != nil
 		else
-			order = Order.where(user_id: ip).first
+			order_new = Order.create(:cart_status => "pending")
+			order_new.save
+			cookies[:id] = order_new.id
 		end
-		@duplicate = Orderitemrelation.where(order_id: order.id).where(item_id: params[:item_id])
-		if @duplicate.length == 0
-			orderitemrelation = Orderitemrelation.create(:order_id => order.id, :item_id => params[:item_id], :quantity => 1)
+		order_id = cookies[:id]
+		
+		duplicate = Orderitemrelation.where(order_id: order_id).where(item_id: params[:item_id])
+		if duplicate.length == 0
+			orderitemrelation = Orderitemrelation.create(:order_id => order_id, :item_id => params[:item_id], :quantity => 1)
 		else
-			@quantity = @duplicate.first.quantity  + 1
-			@duplicate.first.update(quantity: @quantity) 
+			quantity = duplicate.first.quantity  + 1
+			duplicate.first.update(quantity: quantity) 
 		end
-		@relation = order.orderitemrelations.length
+		@relation = Order.find(order_id).orderitemrelations.length
 		render :partial => 'cart', :content_type => 'text/html'
 	end
 end
