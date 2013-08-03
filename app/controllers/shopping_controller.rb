@@ -45,4 +45,13 @@ class ShoppingController < ApplicationController
 		@relation = Order.find(order_id).orderitemrelations.length
 		render :partial => 'cart', :content_type => 'text/html'
 	end
+
+	def cartdrop
+		if cookies[:id] != nil
+			@list = Order.find(cookies[:id]).orderitemrelations
+		else
+			@list = -1
+		end
+		render :partial => 'cartdrop', :content_type => 'text/html'
+	end
 end
