@@ -59,7 +59,7 @@ class ShoppingController < ApplicationController
 		relation = Orderitemrelation.find(params[:id])
 		relation.destroy
 
-		@list = []
+		@list = Order.find(cookies[:id]).orderitemrelations
 
 		render :partial => 'cartdrop', :content_type => 'text/html'
 	end
