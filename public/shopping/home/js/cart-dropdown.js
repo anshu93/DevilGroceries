@@ -19,4 +19,8 @@ $(function(){
 		var loader = '<img class = "loader" src = "/shopping/home/img/ajax-loader.gif">';
 		$("#cart-list").html(loader);
 	});
+
+	$(document).on('ajax:success', '#delete_relation', function(evt, data) {
+		$("#cart-list").html(data);
+	});
 });
