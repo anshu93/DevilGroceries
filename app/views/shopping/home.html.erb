@@ -5,8 +5,11 @@
 </head>
 <body>
 
-	<div class = "cart-dropdown">
+	<div class="cart-dropdown">
+		<a href="/shopping/cartdrop" id="cart-hidden" data-remote="true"></a>
 		<a href='#' id = "close-button">close</a>
+		<div id="cart-list">
+		</div>
 	</div>
 	<div class="container">
 		<!-- Header -->
@@ -55,7 +58,7 @@
 		<div class="main">
 			<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
 				<div class = "cart-container">
-					<a href = "#" class = "cart" id = "cart-id">Shopping Cart &nbsp<i class="icon icon-shopping-cart"></i> <span id="cart-count">(<%= @relation %>)</span></a>
+					<a href="/shopping/cartdrop" class="cart" id="cart-id" data-remote="true">Shopping Cart &nbsp<i class="icon icon-shopping-cart"></i> <span id="cart-count">(<%= @relation %>)</span></a>
 				</div>
 				<div class="cbp-vm-options">
 					<a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid">Grid View</a>

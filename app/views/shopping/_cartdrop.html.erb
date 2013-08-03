@@ -1,8 +1,14 @@
-<ul>
-	<li>
-		<ul>
-			<li>col1row1</li>
-			<li>col2row2</li>
-		</ul>
-	</li>
-</ul>
+<% if @list == -1 %>
+	<p>No orders</p>
+<% else %>
+	<ul>
+		<% @list.each do |l| %>
+			<li>
+				<p><%= l.item.name %></p>
+				<p><%= l.item.unit %></p>
+				<p><%= l.quantity %></p>
+				<p><%= l.item.selling_price %></p>
+			</li>
+		<% end %>
+	</ul>
+<% end %>

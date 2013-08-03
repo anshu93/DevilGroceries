@@ -10,4 +10,5 @@ Gro::Application.routes.draw do
 
 	match "shopping/result" => "shopping#result", :via => [:get]
 	match "shopping/cart" => "shopping#cart", :via => [:get]
+	match "shopping/cartdrop" => "shopping#cartdrop", :via => [:get]
 end
