@@ -1,13 +1,19 @@
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="shopping/home/css/default.css" />
 	<link rel="stylesheet" type="text/css" href="shopping/home/css/component.css" />
+	<link rel="stylesheet" type="text/css" href="shopping/home/css/cart.css" />
 	<script src="shopping/home/js/modernizr.custom.js"></script>
 </head>
 <body>
 
 	<div class="cart-dropdown">
 		<a href="/shopping/cartdrop" id="cart-hidden" data-remote="true"></a>
-		<a href='#' id = "close-button">close</a>
+		<div class="close_div">
+			<p>
+				<a href='#' id = "close-button">close <i class="icon-remove"></i></a>
+			</p>
+			<h1>Shopping Cart</h1>
+		</div>
 		<div id="cart-list">
 		</div>
 	</div>
@@ -39,14 +45,14 @@
 					<% end %>
 					<ul>
 						<% @subcategory.each do |subcategory| %>
-							<% if subcategory.category_id == category.id %>
-							<li>
-								<%= link_to(shopping_result_path(:subcategory_id => subcategory.id), {:remote => true, :'data-update-target' => "result", :class => "subcategories"}) do %>
-								<i class="icon icon-caret-right"></i>
-								<%= subcategory.subcategory_name %>
-								<% end %>
-							</li>
+						<% if subcategory.category_id == category.id %>
+						<li>
+							<%= link_to(shopping_result_path(:subcategory_id => subcategory.id), {:remote => true, :'data-update-target' => "result", :class => "subcategories"}) do %>
+							<i class="icon icon-caret-right"></i>
+							<%= subcategory.subcategory_name %>
 							<% end %>
+						</li>
+						<% end %>
 						<% end %>
 					</ul>
 				</li>
@@ -80,9 +86,9 @@
 	<script src="shopping/home/js/cart_ajax.js"></script>
 	<script src="shopping/home/js/cart-dropdown.js"></script>
 	<script>
-    jQuery(function(){
-      jQuery('#all_items').click();
-    });
+	jQuery(function(){
+		jQuery('#all_items').click();
+	});
 	</script>
-		<!-- JS end -->
+	<!-- JS end -->
 </body>
