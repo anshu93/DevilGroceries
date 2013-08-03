@@ -1,4 +1,4 @@
-<% if @list == -1 %>
+<% if @list.length == 0 %>
 	<p>No orders</p>
 <% else %>
 	<ul>
@@ -6,8 +6,9 @@
 			<li>
 				<p><%= l.item.name %></p>
 				<p><%= l.item.unit %></p>
-				<p><%= l.quantity %></p>
+				<p><%= number_field_tag("quantity", l.quantity) %></p>
 				<p><%= l.item.selling_price %></p>
+				<p><%= link_to("Delete", {:action => "delete_relation", :id => l.id}, {:remote => true, :id => "delete_relation"}) %></p>
 			</li>
 		<% end %>
 	</ul>

@@ -50,8 +50,17 @@ class ShoppingController < ApplicationController
 		if cookies[:id] != nil
 			@list = Order.find(cookies[:id]).orderitemrelations
 		else
-			@list = -1
+			@list = 0
 		end
+		render :partial => 'cartdrop', :content_type => 'text/html'
+	end
+
+	def delete_relation
+		relation = Orderitemrelation.find(params[:id])
+		relation.destroy
+
+		@list = []
+
 		render :partial => 'cartdrop', :content_type => 'text/html'
 	end
 end
