@@ -43,6 +43,7 @@ class ShoppingController < ApplicationController
 			duplicate.first.update(quantity: quantity) 
 		end
 		@relation = Order.find(order_id).orderitemrelations.length
+
 		render :partial => 'cart', :content_type => 'text/html'
 	end
 
@@ -62,5 +63,11 @@ class ShoppingController < ApplicationController
 		@list = Order.find(cookies[:id]).orderitemrelations
 
 		render :partial => 'cartdrop', :content_type => 'text/html'
+	end
+
+	def cartcountupdate
+		order_id = cookies[:id]
+		@relation = Order.find(order_id).orderitemrelations.length
+		render :partial => 'cart', :content_type => 'text/html'
 	end
 end

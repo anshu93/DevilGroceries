@@ -7,6 +7,10 @@ $(document).ready(function() {
 	$('#close-button').on("click", function(){
 		$(".cart-dropdown").toggle("linear");
 	});
+
+	$('#close-button').on("click", function(){
+		$("#cart-hidden-close").trigger("click");
+	});
 });
 
 

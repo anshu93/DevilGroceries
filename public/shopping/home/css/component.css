@@ -1,4 +1,9 @@
 /* Loader */
+.logo {
+	width: 250px;
+	height: auto;
+}
+
 .loader {
 	display: block;
 	margin-right: auto;

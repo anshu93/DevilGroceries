@@ -8,9 +8,10 @@
 
 	<div class="cart-dropdown">
 		<a href="/shopping/cartdrop" id="cart-hidden" data-remote="true"></a>
+		<%= link_to("", {:action => 'cartcountupdate'}, {:remote => true, :'data-update-target' => 'cart-count', :class => "cart-hidden-close", :id => "cart-hidden-close"}) %>		
 		<div class="close_div">
 			<p>
-				<a href='#' id = "close-button">close <i class="icon-remove"></i></a>
+				<a href='#' id = "close-button" data-remote="true" data-update-target="cart-count">close <i class="icon-remove"></i></a>
 			</p>
 			<h1>Shopping Cart</h1>
 		</div>
@@ -20,7 +21,7 @@
 	<div class="container">
 		<!-- Header -->
 		<header class="clearfix">
-			<h1><img src = "logo.png"></img></h1>
+			<h1><img class="logo" src = "logo.png"></img></h1>
 			<nav>
 				<a href="welcome/home" class="">Home</a>
 				<a href="welcome/about" class="">About</a>

@@ -33,7 +33,7 @@ $(function(){
 	$(document).on('ajax:success', '.pagination a', function(evt, data) {
 		$('#result').html(data);
 	});
-
+	//Activated by the add to cart button that refreshes the dropdown
 	$(document).on('ajax:success', '#cart-hidden', function(evt, data) {
 		$("#cart-list").html(data);
 	});
@@ -44,8 +44,8 @@ $(function(){
 	});
 
 	//Have the close button refresh the number next to the cart
-	$(document).on('ajax:success', '#cart-hidden', function(evt, data){
-		$('').html(data)
+	$(document).on('ajax:success', '#cart-hidden-close', function(evt, data){
+		$('#cart-count').html(data);
 	});
 });
 
