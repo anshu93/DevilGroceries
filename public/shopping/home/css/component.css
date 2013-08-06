@@ -362,6 +362,9 @@
 .cbp-vm-view-list .cbp-vm-unit {
 	width: 20%;
 	font-size: 1.2em;
+	height: 20px;
+	font-weight: bold;
+	line-height: 20px;
 }
 
 .cbp-vm-view-list .cbp-vm-add {
