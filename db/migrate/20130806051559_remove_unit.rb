@@ -1,5 +1,5 @@
 class RemoveUnit < ActiveRecord::Migration
   def change
-  	drop_table :unit
+  	drop_table :units
   end
 end
