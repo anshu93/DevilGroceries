@@ -9,6 +9,7 @@
 			<strike>$<%= item.duke_price %> at Duke</strike>
 			<% end %>
 		</div>
+		<div class="cbp-vm-unit"><%= item.unit %></div>
 		<%= link_to("Add to cart", shopping_cart_path(:item_id => item.id), {:remote => true, :'data-update-target' => "cart-count", :class => "cbp-vm-icon cbp-vm-add"}) %>
 	</li>
 	<% end %>
