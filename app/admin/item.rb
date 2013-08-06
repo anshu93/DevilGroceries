@@ -5,6 +5,7 @@ ActiveAdmin.register Item do
 		column :selling_price
 		column :supply_price
 		column :duke_price
+		column :unit
 		column :active
 		column "Image" do |item|
 			link_to(image_tag(item.image.url(), :height => '60' ), admin_item_path(item))
