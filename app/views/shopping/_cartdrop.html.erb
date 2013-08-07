@@ -7,7 +7,7 @@
 				<p><%= l.item.name %></p>
 				<p><%= l.item.unit %></p>
 				<p class="quantity"><%= number_field_tag("quantity", l.quantity) %></p>
-				<p><%= link_to("Delete", {:action => "delete_relation", :id => l.id}, {:remote => true, :id => "delete_relation"}) %></p>
+				<p><%= link_to("Delete", {:action => "delete_relation", :id => l.id}, {:remote => true, :id => "delete_relation", :method => 'post'}) %></p>
 			</li>
 		<% end %>
 	</ul>
