@@ -1,15 +1,23 @@
 
 $(document).ready(function() {
+	// On clicking the shopping cart icon drop the actual cart
 	$('#cart-id').on("click", function(){
 		$(".cart-dropdown").toggle("linear");
 	});
 
+	// On clicking the close button close the dropdown
 	$('#close-button').on("click", function(){
 		$(".cart-dropdown").toggle("linear");
 	});
 
+	// on clicking the close button update the figure next to the shopping cart
 	$('#close-button').on("click", function(){
 		$("#cart-hidden-close").trigger("click");
+	});
+
+	// on changing the amount of an object in the number field save it to the db
+	$('#quantity').change(function(){
+		alert('quantity has been changed');
 	});
 });
 

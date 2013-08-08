@@ -70,4 +70,10 @@ class ShoppingController < ApplicationController
 		@relation = Order.find(order_id).orderitemrelations.length
 		render :partial => 'cart', :content_type => 'text/html'
 	end
+
+	def save_quantity
+		relation_modify = Orderitemrelation.find(params[:orderitemrelation][:l_id])
+		new_quantity = params[:orderitemrelation][:quantity]
+		relation_modify.update(:quantity => new_quantity)
+	end
 end
