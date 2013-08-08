@@ -6,12 +6,12 @@
 	<li>
 		<p><%= l.item.name %></p>
 		<p><%= l.item.unit %></p>
-		<%=  form_for l, :url => {:controller => "shopping", :action => "save_quantity"}, :html => {:method => 'get'} do |f| %>
+		<%=  form_for l, :url => {:controller => "shopping", :action => "save_quantity"}, :html => {:method => 'post', :'data-type' => 'json'}, :remote => true do |f| %>
 		<%= f.hidden_field :l_id, :value => l.id %>
 		<%= f.text_field :quantity, {:placeholder => l.quantity, :name => 'quantity', :id => 'quantity'} %>
-		<%= f.submit "Submit", :id => 'submit' %>
+		<%= f.submit "Submit", :id => 'submit', :value => l.id %>
 		<% end %>
-		<div id = 'total-item-price'><%= l.item.selling_price %></div>
+		<div id = 'total-item-price'>$<%= l.item.selling_price * l.quantity %></div>
 		<p><%= link_to("Delete", {:action => "delete_relation", :id => l.id}, {:remote => true, :id => "delete_relation", :method => 'post'}) %></p>
 		<% end %>
 	</li>

@@ -75,5 +75,8 @@ class ShoppingController < ApplicationController
 		relation_modify = Orderitemrelation.find(params[:orderitemrelation][:l_id])
 		new_quantity = params[:quantity]
 		relation_modify.update(:quantity => new_quantity)
+		@list = Order.find(cookies[:id]).orderitemrelations
+		redirect_to :action => 'cartdrop'
+		#render :partial => 'cartdrop', :content_type => 'text/html'
 	end
 end
