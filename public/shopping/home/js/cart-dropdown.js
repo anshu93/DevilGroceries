@@ -14,11 +14,6 @@ $(document).ready(function() {
 	$('#close-button').on("click", function(){
 		$("#cart-hidden-close").trigger("click");
 	});
-
-	// on changing the amount of an object in the number field save it to the db
-	$('#quantity').change(function(){
-		alert('quantity has been changed');
-	});
 });
 
 

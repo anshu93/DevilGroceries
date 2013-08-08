@@ -1,3 +1,7 @@
+#submit {
+	#display: none;
+}
+
 .cart-dropdown {
 	height: 500px;
 	max-height: 80%;

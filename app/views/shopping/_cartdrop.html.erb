@@ -8,7 +8,7 @@
 		<p><%= l.item.unit %></p>
 		<%=  form_for l, :url => {:controller => "shopping", :action => "save_quantity"}, :html => {:method => 'get'} do |f| %>
 		<%= f.hidden_field :l_id, :value => l.id %>
-		<%= f.text_field :quantity, {:placeholder => l.quantity, :id => 'quantity'} %>
+		<%= f.text_field :quantity, {:placeholder => l.quantity, :name => 'quantity', :id => 'quantity'} %>
 		<%= f.submit "Submit", :id => 'submit' %>
 		<% end %>
 		<div id = 'total-item-price'><%= l.item.selling_price %></div>
@@ -17,3 +17,4 @@
 	</li>
 	</ul>
 	<% end %>
+	<script src="shopping/home/js/cart-dropdown-update.js"></script>

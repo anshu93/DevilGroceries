@@ -73,7 +73,7 @@ class ShoppingController < ApplicationController
 
 	def save_quantity
 		relation_modify = Orderitemrelation.find(params[:orderitemrelation][:l_id])
-		new_quantity = params[:orderitemrelation][:quantity]
+		new_quantity = params[:quantity]
 		relation_modify.update(:quantity => new_quantity)
 	end
 end
