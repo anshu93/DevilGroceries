@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	// on changing the amount of an object in the number field submit the form
 	$('input[name="quantity"]').change(function(){
-		$('#submit').trigger("click");
+		$(this).parent('form').children('input[name="commit"]').eq(0).trigger("click");
 	});
 
 	// Submit the form such that it doesn't have to refresh the entire page

@@ -1,3 +1,7 @@
+.submit {
+	display: none;
+}
+
 /* Loader */
 .logo {
 	width: 250px;

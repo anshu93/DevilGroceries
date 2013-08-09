@@ -2,7 +2,7 @@ class ShoppingController < ApplicationController
 	def home
 		@category = Category.all
 		@subcategory = Subcategory.all
-		if cookies[:id] != nil
+		if cookies[:id] != nil and Order.exists?(cookies[:id])
 			order_id = cookies[:id]
 			@relation = Order.find(order_id).orderitemrelations.length
 		else
@@ -27,7 +27,7 @@ class ShoppingController < ApplicationController
 	end
 
 	def cart #Activated when the add to cart button is pressed
-		if cookies[:id] != nil
+		if cookies[:id] != nil and Order.exists?(cookies[:id])
 		else
 			order_new = Order.create(:cart_status => "pending")
 			order_new.save
@@ -48,12 +48,25 @@ class ShoppingController < ApplicationController
 	end
 
 	def cartdrop
-		if cookies[:id] != nil
+		if cookies[:id] != nil and Order.exists?(cookies[:id])
 			@list = Order.find(cookies[:id]).orderitemrelations
 		else
 			@list = 0
 		end
-		@orders = Order.find(cookies[:id])
+		@total_price = 0
+		delta_price = 0
+		total_duke_price = 0
+		duke_delta_price = 0
+		@list.each do |relation|
+			delta_price = relation.quantity * relation.item.selling_price
+			if relation.item.duke_price != nil
+			duke_delta_price = relation.quantity * relation.item.duke_price
+			total_duke_price = total_duke_price + duke_delta_price
+			end
+			@total_price = @total_price + delta_price
+		end
+		price = @total_price
+		@saved = total_duke_price - price
 		render :partial => 'cartdrop', :content_type => 'text/html'
 	end
 

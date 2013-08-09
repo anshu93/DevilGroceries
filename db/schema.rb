@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130806051931) do
+ActiveRecord::Schema.define(version: 20130809163629) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 20130806051931) do
 
   create_table "items", force: true do |t|
     t.string   "name"
-    t.decimal  "selling_price"
     t.decimal  "supply_price"
     t.decimal  "duke_price"
     t.string   "category_id"
@@ -67,6 +66,7 @@ ActiveRecord::Schema.define(version: 20130806051931) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "unit"
+    t.decimal  "selling_price",      precision: 8, scale: 2
   end
 
   create_table "orderitemrelations", force: true do |t|
