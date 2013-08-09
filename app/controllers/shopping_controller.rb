@@ -53,6 +53,7 @@ class ShoppingController < ApplicationController
 		else
 			@list = 0
 		end
+		@orders = Order.find(cookies[:id])
 		render :partial => 'cartdrop', :content_type => 'text/html'
 	end
 

@@ -8,14 +8,11 @@ $(document).ready(function(){
 	$('form').submit(function() { 
 		var valuesToSubmit = $(this).serialize();
 		$.ajax({
-			//alert("in ajax function...");
         	url: $(this).attr('action'), //sumbits it to the given url of the form
         	data: valuesToSubmit,
         	type: 'POST',
-        	//dataType: "JSON" // you want a difference between normal and ajax-calls, and json is standard
     	}).success(function(data){
-    		// Linking to cart-list refreshes it
-        	$("#cart-list").html(data);
+        	$("#cart-list").html(data);	// Linking to cart-list refreshes it
     	});
     	return false; // prevents normal behaviour
 	});
