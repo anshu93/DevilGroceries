@@ -16,8 +16,8 @@
 		<% end %>
 	</li>
 </ul>
-The total order price is: <%= number_to_currency(@total_price, :precision => 2) %><br>
-<% if @saved > 0 %>
+Order Total: <%= number_to_currency(@total_price, :precision => 2) %><br>
+<% if @saved.to_f > 0 %>
 	You save <%= number_to_currency(@saved, :precision => 2) %>
 <% end %>
 <% end %>
