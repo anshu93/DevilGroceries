@@ -59,14 +59,13 @@ class ShoppingController < ApplicationController
 		duke_delta_price = 0
 		@list.each do |relation|
 			delta_price = relation.quantity * relation.item.selling_price
-			if relation.item.duke_price != nil
-			duke_delta_price = relation.quantity * relation.item.duke_price
+			if relation.item.duke_price != nil and relation.item.duke_price != 0
+			duke_delta_price = (relation.quantity * relation.item.duke_price) - delta_price
 			total_duke_price = total_duke_price + duke_delta_price
 			end
 			@total_price = @total_price + delta_price
 		end
-		price = @total_price
-		@saved = total_duke_price - price
+		@saved = total_duke_price
 		render :partial => 'cartdrop', :content_type => 'text/html'
 	end
 

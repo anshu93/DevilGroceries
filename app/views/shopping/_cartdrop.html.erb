@@ -17,6 +17,8 @@
 	</li>
 </ul>
 The total order price is: <%= number_to_currency(@total_price, :precision => 2) %><br>
-You save <%= number_to_currency(@saved, :precision => 2) %>
+<% if @saved > 0 %>
+	You save <%= number_to_currency(@saved, :precision => 2) %>
+<% end %>
 <% end %>
 	<script src="shopping/home/js/cart-dropdown-update.js"></script>

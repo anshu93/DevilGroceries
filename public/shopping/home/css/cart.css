@@ -1,11 +1,7 @@
-#submit {
-	#display: none;
-}
-
 .cart-dropdown {
 	height: 500px;
 	max-height: 80%;
-	width: 500px;
+	width: 700px;
 	max-width: 100%;
 	border: solid 3px #081e4f;
 	opacity: 1;
@@ -13,7 +9,7 @@
 	position: fixed;
 	display: none;
 	left: 50%;
-	margin-left: -250px;
+	margin-left: -350px;
 	z-index: 9999;
 	overflow-y: scroll;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 1);
@@ -40,6 +36,10 @@
 .cart-dropdown #close-button {
 	font-size: 2em;
 	color: #1c1c1c;
+}
+
+.cart-dropdown #close-button:hover {
+	color: #00333;
 }
 
 .cart-dropdown h1 {
@@ -71,14 +71,49 @@
 
 #cart-list ul li {
 	width: 100%;
-	padding: 20px 0;
-	white-space: nowrap;
+	padding: 5px 0;
+	white-space: normal;
+}
+
+#cart-list ul li:hover {
+	background-color: #003333;
 }
 
 #cart-list ul li p {
 	display: inline-block;
 	vertical-align: middle;
-	width: 20%;
-	text-align: center;
+	width: 15%;
+	text-align: left;
+	margin: 0 1% 0;
+}
+
+#cart-list ul li form {
+	width: 15%;
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 1% 0;
+}
+
+#total-item-price {
+	width: 15%;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#cart-list ul li input[type="text"] {
+	display: inline-block;
+	vertical-align: middle;
+	width: 30px;
 	margin: 0;
+}
+
+#cart-list ul li .submit {
+	display: none;
+}
+
+@media screen and (max-width: 47.375em) {
+	.cart-dropdown {
+		width: 100%;
+		height: 100%;
+	}
 }
