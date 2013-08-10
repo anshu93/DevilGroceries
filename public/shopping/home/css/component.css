@@ -275,6 +275,7 @@
 	display: inline-block;
 	height: 315px;
 	width: 300px;
+	max-height: 600px;
 	vertical-align: top;
 }
 
@@ -291,6 +292,7 @@
 .cbp-vm-view-grid .cbp-vm-title {
 	font-size: 20px;
 	line-height: 20px;
+	max-height: auto;
 }
 
 .cbp-vm-title {
@@ -373,6 +375,10 @@
 
 .cbp-vm-view-list .cbp-vm-add {
 	margin: 0;
+}
+
+.pagination {
+	margin: 20px;
 }
 
 @media screen and (max-width: 66.7em) {

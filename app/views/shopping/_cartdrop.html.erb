@@ -2,8 +2,14 @@
 <p>No orders</p>
 <% else %>
 <ul>
-	<% @list.each do |l| %>
 	<li>
+	<h1 id="item-header"> Item Name </h1>
+	<h1 id="unit-header"> Unit </h1>
+	<h1 id="quantity-header"> Quantity </h1>
+	<h1 id="price-header"> Price </h1>
+	</li>
+	<% @list.each do |l| %>
+	<li class="item-row">
 		<p><%= l.item.name %></p>
 		<p><%= l.item.unit %></p>
 		<%=  form_for l, :url => {:controller => "shopping", :action => "save_quantity"}, :html => {:method => 'post', :'data-type' => 'json'}, :remote => true do |f| %>
@@ -12,7 +18,7 @@
 		<%= f.submit "Submit", :class => "submit"%>
 		<% end %>
 		<div id = 'total-item-price'><%= number_to_currency(l.item.selling_price * l.quantity, :precision => 2) %></div>
-		<p><%= link_to("Delete", {:action => "delete_relation", :id => l.id}, {:remote => true, :id => "delete_relation", :method => 'post'}) %></p>
+		<p><%= link_to("Delete", {:action => "delete_relation", :id => l.id},{:remote => true, :id => "delete_relation", :method => 'post', :class => "delete-button"}) %></p>
 		<% end %>
 	</li>
 </ul>
