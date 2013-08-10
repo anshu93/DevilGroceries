@@ -377,7 +377,7 @@
 
 @media screen and (max-width: 66.7em) {
 	.cbp-vm-view-list .cbp-vm-details  {
-		width: 30%;
+		#width: 30%;
 	}
 } 
 
@@ -405,10 +405,16 @@
 	.cbp-vm-view-list .cbp-vm-add  {
 		margin: 10px;
 	}
+
+	#list-button {
+		visibility: hidden;
+	}
 }
 
 @media screen and (max-width: 40.125em) {
 	.cbp-vm-view-grid ul li {
 		width: 100%;
 	}
+
+
 }
