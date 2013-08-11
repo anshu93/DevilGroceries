@@ -2,7 +2,7 @@
 <p>No orders</p>
 <% else %>
 <ul>
-	<li>
+	<li class="header-row">
 	<h1 id="item-header"> Item Name </h1>
 	<h1 id="unit-header"> Unit </h1>
 	<h1 id="quantity-header"> Quantity </h1>
@@ -22,9 +22,11 @@
 		<% end %>
 	</li>
 </ul>
+<div class="checkout-bar">
 Order Total: <%= number_to_currency(@total_price, :precision => 2) %><br>
 <% if @saved.to_f > 0 %>
 	You save <%= number_to_currency(@saved, :precision => 2) %>
 <% end %>
+</div>
 <% end %>
 	<script src="shopping/home/js/cart-dropdown-update.js"></script>
