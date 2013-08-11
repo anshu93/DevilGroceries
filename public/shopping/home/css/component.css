@@ -385,6 +385,7 @@
 	padding: 2px;
 	color: #ffffff;
 	background-color: #47a3da;
+	border-right: 1px solid;
 }
 
 @media screen and (max-width: 66.7em) {
