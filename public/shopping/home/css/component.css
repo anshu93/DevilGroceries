@@ -381,6 +381,12 @@
 	margin: 20px;
 }
 
+.pagination span {
+	padding: 2px;
+	color: #ffffff;
+	background-color: #47a3da;
+}
+
 @media screen and (max-width: 66.7em) {
 	.cbp-vm-view-list .cbp-vm-details  {
 		#width: 30%;
