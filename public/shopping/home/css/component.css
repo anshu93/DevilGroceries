@@ -213,7 +213,7 @@
 }
 
 .cbp-vm-price {
-	color: #c0c0c0;
+	color: #d54f30;
 }
 
 .cbp-vm-add {
@@ -388,6 +388,14 @@
 	color: #ffffff;
 	background-color: #47a3da;
 	border-right: 1px solid;
+}
+
+.cbp-vm-details strike {
+	color: red;
+}
+
+.cbp-vm-details .duke-price {
+	color: rgb(119, 119, 119);
 }
 
 @media screen and (max-width: 66.7em) {
