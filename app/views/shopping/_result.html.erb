@@ -5,9 +5,9 @@
 		<h3 class="cbp-vm-title"><%= item.name %></h3>
 		<div class="cbp-vm-details">
 			<% if item.duke_price.blank? %>
-			Duke Equivalent: <strike><%= number_to_currency(item.duke_price, :precision => 2) %></strike>
-			<% else %>
 			Not Available @ Duke
+			<% else %>
+			Duke Equivalent: <strike><%= number_to_currency(item.duke_price, :precision => 2) %></strike>
 			<% end %>
 		</div>
 		<div class="cbp-vm-price"><%= number_to_currency(item.selling_price, :precision => 2) %></div>
