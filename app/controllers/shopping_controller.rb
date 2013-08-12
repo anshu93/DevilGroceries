@@ -12,11 +12,11 @@ class ShoppingController < ApplicationController
 
 	def result
 		if params[:category_id] == "-1"
-			@item = Item.order("RANDOM()")
+			@item = Item.where(active: "active").order("RANDOM()")
 		elsif params[:category_id] != nil
-			@item = Category.find(params[:category_id]).items.order("RANDOM()")
+			@item = Category.find(params[:category_id]).items.where(active: "active").order("RANDOM()")
 		else
-			@item = Subcategory.find(params[:subcategory_id]).items.order("RANDOM()")
+			@item = Subcategory.find(params[:subcategory_id]).items.where(active: "active").order("RANDOM()")
 		end
 		unless @item.kind_of?(Array)
 			@item = @item.page(params[:page]).per(18)

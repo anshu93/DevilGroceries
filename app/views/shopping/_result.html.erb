@@ -4,8 +4,10 @@
 		<a class="cbp-vm-image" href="#"><%= image_tag item.image.url %></a>
 		<h3 class="cbp-vm-title"><%= item.name %></h3>
 		<div class="cbp-vm-details">
-			<% unless item.duke_price.blank? %>
+			<% if item.duke_price.blank? %>
 			Duke Equivalent: <strike><%= number_to_currency(item.duke_price, :precision => 2) %></strike>
+			<% else %>
+			Not Available @ Duke
 			<% end %>
 		</div>
 		<div class="cbp-vm-price"><%= number_to_currency(item.selling_price, :precision => 2) %></div>
