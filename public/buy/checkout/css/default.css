@@ -132,6 +132,74 @@ a:active {
 	content: "\e003";
 }
 
+
+.container {
+	height: 100%;
+	position: relative;
+}
+
+.container > header {
+	width: 100%;
+	padding: 0 2em;
+	margin: 0 auto;
+	z-index: 1000;
+	position: relative;
+	color: #081e4f;
+}
+
+.container > header h1 {
+	font-size: 2.125em;
+	line-height: 1;
+	margin: 20px 20px;
+	float: left;
+	font-weight: 400;
+}
+
+.container > header nav {
+	float: right;
+	text-align: center;
+	margin: 30px 0px;
+}
+
+.container > header nav a {
+	line-height: 1;
+	display: inline-block;
+	position: relative;
+	text-align: left;
+	background: #fff;
+	color: #777;
+	margin: 0px 20px;
+}
+
+.container > header nav a:hover {
+	color: #081e4f;
+}
+
+@media screen and (max-width: 55em) {
+
+	.container > header {
+		padding: 0 1em;
+	}
+
+	.container > header h1,
+	.container > header nav {
+		float: none;
+	}
+
+	.container > header > span,
+	.container > header h1 {
+		text-align: center;
+	}
+
+	.container > header nav {
+		margin: 0 auto;
+	}
+
+	.container > header > span {
+		text-indent: 30px;
+	}
+}
+
 @media screen and (max-width: 25em) {
 
 	.codrops-icon span {
