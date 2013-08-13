@@ -18,3 +18,12 @@
 	<% end %>
 	<%= paginate @item, :window => 2, :remote => true  %>
 </ul>
+<script>
+/* Add button Jquery */
+$(document).ready(function(){
+	$(".cbp-vm-add").on("click", function(){
+		$(this).fadeIn(3000).css('background-color', "#d54f30");
+		$(this).fadeOut(2000);
+	});
+});
+</script>

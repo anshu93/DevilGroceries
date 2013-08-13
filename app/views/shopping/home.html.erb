@@ -5,7 +5,7 @@
 	<script src="shopping/home/js/modernizr.custom.js"></script>
 </head>
 <body>
-
+	<div class="transparency"></div>
 	<div class="cart-dropdown">
 		<a href="/shopping/cartdrop" id="cart-hidden" data-remote="true"></a>
 		<%= link_to("", {:action => 'cartcountupdate'}, {:remote => true, :'data-update-target' => 'cart-count', :class => "cart-hidden-close", :id => "cart-hidden-close"}) %>		
@@ -81,7 +81,7 @@
 	<!-- Container end -->
 	<!-- JS -->
 	
-	<script type="text/javascript" src="shopping/home/js/menu.js"></script>
+	<script src="shopping/home/js/menu.js"></script>
 	<script src="shopping/home/js/classie.js"></script>
 	<script src="shopping/home/js/cbpViewModeSwitch.js"></script>
 	<script src="shopping/home/js/cart_ajax.js"></script>
