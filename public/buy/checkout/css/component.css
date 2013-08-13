@@ -9,6 +9,10 @@
 	font-style: normal;
 }
 
+.help-text {
+	text-align: center;
+}
+
 /* general style for the form */
 .nl-form {
 	text-align: center;

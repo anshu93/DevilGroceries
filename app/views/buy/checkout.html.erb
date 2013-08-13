@@ -19,7 +19,10 @@
 		</nav>
 </header>
 
-<%= number_to_currency(@total_price, :precision => 2) %>
+<div class="help-text">
+<h1> CHECKOUT </h1>
+Your order total is <%= number_to_currency(@total_price, :precision => 2) %>. Fill out the form below and press the "buy" button to place your order.
+</div>
 <%= form_for @order, :url => {:controller => "buy", :action => "purchased"}, :html => {:method => 'post', :id => "nl-form", :class => "nl-form"} do |f|%>
 	<%= f.hidden_field :order_id, :value => @order.id %>
 	My name is &nbsp
@@ -28,16 +31,17 @@
 	<%= f.select :campus, options_for_select([["East", "East"], ["West", "West"], ["Central", "Central"]]) %>
 	 campus 
 	<%= f.select :building, options_for_select([["EAST", "EAST:"], ["Aycock", "Aycock"], ["Belltower","Belltower"]]) %>
-	dorm <br /> &nbsp and room 
+	dorm <br /> &nbsp and room and house 
 	<%= f.text_field :room, {:placeholder => "number", "data-subline" => "eg. 230GG", } %>
 	. In case I am not present during delivery I can be called at  
 	<%= f.text_field :phone, {:placeholder => "Phone number (optional)"} %>
-	<br /> and I would like an order confirmation emailed to
+	and I would like an order confirmation emailed to
 	<%= f.text_field :email, {:placeholder => "email (optional)"} %>
 	<br />
 	<div class = "nl-submit-wrap">
-	<%= f.submit "Buy", {:class => "nl-submit"} %>
+	<%= button_tag "Purchase", {:class => "nl-submit"} %>
 	</div>
+	<div class="nl-overlay"></div>
 <% end %>
 <script>
 	var nlform = new NLForm( document.getElementById( 'nl-form' ) );
