@@ -125,6 +125,10 @@
 	color: #d54f30;
 }
 
+.delete-button:hover {
+	color: #ff0000;
+}
+
 #cart-list > .checkout-bar {
 	width: 100%;
 	height: 5%;
