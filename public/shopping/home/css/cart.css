@@ -10,7 +10,7 @@
 	display: none;
 	left: 15%;
 	#margin-left: -350px;
-	z-index: 7777;
+	z-index: 9999;
 	overflow-y: scroll;
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 1);
 }

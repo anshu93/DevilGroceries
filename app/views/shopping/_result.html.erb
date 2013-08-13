@@ -22,8 +22,10 @@
 /* Add button Jquery */
 $(document).ready(function(){
 	$(".cbp-vm-add").on("click", function(){
-		$(this).fadeIn(3000).css('background-color', "#d54f30");
-		$(this).fadeOut(2000);
+		$(this).fadeIn(5000).css('background-color', "#d54f30");
+		setTimeout(function(){
+			$(".cbp-vm-add").fadeIn(5000).css('background-color', "#47a3da");
+		}, 1300);
 	});
 });
 </script>
