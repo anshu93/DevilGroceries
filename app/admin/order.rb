@@ -62,7 +62,7 @@ ActiveAdmin.register Order do
 					orderitemrelation.quantity
 				end
 				column "unit" do |orderitemrelation|
-					orderitemrelation.item.unit.unit_name
+					orderitemrelation.item.unit
 				end
 			end
 		end

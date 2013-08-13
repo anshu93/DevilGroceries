@@ -31,6 +31,7 @@
 	You save <%= number_to_currency(@saved, :precision => 2) %>
 	<% end %>
 	</div>
+	<%= link_to("Checkout", {:controller => "buy", :action => "checkout"}, {:class => "checkout"})  %>
 </div>
 <% end %>
 <script src="shopping/home/js/cart-dropdown-update.js"></script>
