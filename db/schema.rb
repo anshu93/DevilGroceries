@@ -11,22 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130813203115) do
-
-  create_table "Orders", force: true do |t|
-    t.string   "user_id"
-    t.string   "campus"
-    t.string   "building"
-    t.string   "room"
-    t.string   "email"
-    t.string   "phone"
-    t.string   "date"
-    t.string   "time"
-    t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "cart_status"
-  end
+ActiveRecord::Schema.define(version: 20130814204604) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -67,6 +52,22 @@ ActiveRecord::Schema.define(version: 20130813203115) do
     t.datetime "updated_at"
   end
 
+  create_table "dorms", force: true do |t|
+    t.string   "dorm_name"
+    t.integer  "campus_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "easts", force: true do |t|
+    t.string   "dorm"
+    t.string   "neighbourhood"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "items", force: true do |t|
     t.string   "name"
     t.decimal  "supply_price"
@@ -90,6 +91,29 @@ ActiveRecord::Schema.define(version: 20130813203115) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "quantity"
+  end
+
+  create_table "orders", force: true do |t|
+    t.string   "user_id"
+    t.string   "campus"
+    t.string   "building"
+    t.string   "room"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "date"
+    t.string   "time"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "cart_status"
+  end
+
+  create_table "schedule", force: true do |t|
+    t.string   "dorm"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "subcategories", force: true do |t|

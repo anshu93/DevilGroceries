@@ -9,4 +9,5 @@ class Order < ActiveRecord::Base
 		id 
 	end	
 	CART_STATUS = ['pending', 'confirmed']
+	validates :user_id, :campus, :building, presence: true
 end

@@ -29,7 +29,7 @@ class ShoppingController < ApplicationController
 	def cart #Activated when the add to cart button is pressed
 		if cookies[:id] != nil and Order.exists?(cookies[:id])
 		else
-			order_new = Order.create(:cart_status => "pending")
+			order_new = Order.create(:user_id => "NA", :campus => "NA", :building => "NA", :cart_status => "pending")
 			order_new.save
 			cookies[:id] = order_new.id
 		end
@@ -50,22 +50,22 @@ class ShoppingController < ApplicationController
 	def cartdrop
 		if cookies[:id] != nil and Order.exists?(cookies[:id])
 			@list = Order.find(cookies[:id]).orderitemrelations
-		else
-			@list = 0
-		end
-		@total_price = 0
-		delta_price = 0
-		total_duke_price = 0
-		duke_delta_price = 0
-		@list.each do |relation|
+			@total_price = 0
+			delta_price = 0
+			total_duke_price = 0
+			duke_delta_price = 0
+			@list.each do |relation|
 			delta_price = relation.quantity * relation.item.selling_price
 			if relation.item.duke_price != nil and relation.item.duke_price != 0
-			duke_delta_price = (relation.quantity * relation.item.duke_price) - delta_price
-			total_duke_price = total_duke_price + duke_delta_price
+				duke_delta_price = (relation.quantity * relation.item.duke_price) - delta_price
+				total_duke_price = total_duke_price + duke_delta_price
 			end
 			@total_price = @total_price + delta_price
 		end
 		@saved = total_duke_price
+		else
+			@list = 0
+		end
 		render :partial => 'cartdrop', :content_type => 'text/html'
 	end
 

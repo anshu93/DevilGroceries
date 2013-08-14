@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  dorm: MyString
+  neighbourhood: MyString
+  start_time: MyString
+  end_time: MyString
+
+two:
+  dorm: MyString
+  neighbourhood: MyString
+  start_time: MyString
+  end_time: MyString

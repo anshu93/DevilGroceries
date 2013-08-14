@@ -12,6 +12,19 @@
 .help-text {
 	text-align: center;
 }
+/* Styling for the schedule div */
+
+.expand {
+	padding: 2px;
+	background-color: #000000
+	color: #fff;
+}
+
+#schedule {
+	display: none;
+}
+
+
 
 /* general style for the form */
 .nl-form {

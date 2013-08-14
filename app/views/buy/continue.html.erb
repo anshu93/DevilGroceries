@@ -1,0 +1,73 @@
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="checkout/css/default.css" />
+	<link rel="stylesheet" type="text/css" href="checkout/css/component.css" />
+	<script src="checkout/js/modernizr.custom.js"></script>
+	<script src="checkout/js/nlform.js"></script>
+</head>
+<body>
+
+<header class="clearfix">
+	<img class="logo" src = "../logo.png"></img>
+		<nav>
+			<a href="../welcome/home" class="">Home</a>
+			<a href="../welcome/about" class="">About</a>
+			<a href="../welcome/contact" class="">Contact</a>
+			<a href="../welcome/faqs" class="">FAQs</a>
+		</nav>
+</header>
+
+<div class="help-text">
+<h1> CHECKOUT </h1>
+Your order total is <%= number_to_currency(@total_price, :precision => 2) %>. Fill out the form below and press the "confirm order" button to place your order.<br>
+<% if @order.campus == "East" %>
+Customers on East will receive their deliveries in their dorm's common room from our delivery agent according to the following schedule: <br>
+<div id="schedule">
+	<% @schedules.each do |s| %>
+	<div id="schedule-row">
+		<%= s.dorm %>: <%= s.start_time %> to <%= s.end_time %>
+	</div>
+	<% end %>
+<% end %>
+</div>
+</div id = "checkout-form">
+<%= form_for @order, :url => {:controller => "buy", :action => "purchased"}, :html => {:method => 'post', :id => "nl-form", :class => "nl-form"} do |f|%>
+	<%= f.hidden_field :order_id, :value => @order.id %>
+	My name is 
+	<%= f.text_field :user_id, {:placeholder => "Enter name here"} %>
+
+
+	<% if @order.campus == "East" %>
+	and I live in 
+	<%= select_tag(:building, options_for_select([["Alspaugh","Alspaugh"],["Aycock", "Aycock"],["Bassett","Bassett"],["Bell Tower", "Bell Tower"],["Blackwell","Blackwell"],["Brown","Brown"],["Epworth","Epworth"],["Gilbert-Addoms","Gilbert-Addoms"],["Giles","Giles"],["Jarvis","Jarvis"],["Pegram","Pegram"],["Randolph","Randolph"],["Southgate","Southgate"],["Wilson","Wilson"]])) %>
+	dorm
+	
+	<% elsif @order.campus == "West" %>
+	I live in 
+	<%= select_tag(:building, options_for_select([["Craven", "Craven"],["Crowell","Crowell"],["Wannamaker","Wannamaker"],["Edens", "Edens"],["Few","Few"],["Kilgo","Kilgo"]])) %>
+	quad, room and house 
+	<%= f.text_field :room, {:placeholder => "number", "data-subline" => "eg. 230FF"} %>
+
+
+	<% elsif @order.campus == "Central" %>
+	I live near 
+	<%= select_tag(:building, options_for_select([["Alexander", "Alexander"],["Anderson","Anderson"],["Erwin","Erwin"],["Faber", "Faber"],["Lewis","Lewis"],["Swift","Swift"],["Mill Village","Mill Village"],["Devil's Den", "Devil's Den"],["Oregon","Oregon"],["Pace","Pace"],["Yearby","Yearby"]])) %>
+	 in apartment  
+	<%= f.text_field :room, {:placeholder => "number", "data-subline" => "eg. 201"} %>
+
+
+	<% end %>
+	<br>
+	You can contact me at
+	<%= f.text_field :email, {:placeholder => "Email address (optional)"} %>
+	<br>
+	<%= button_tag "Confirm Order", {:class => "nl-submit"} %>
+</div>
+	<div class="nl-overlay"></div>
+<% end %>
+<script>
+	var nlform = new NLForm( document.getElementById( 'nl-form' ) );
+</script>
+</body>

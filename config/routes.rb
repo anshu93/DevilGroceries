@@ -14,6 +14,10 @@ Gro::Application.routes.draw do
 	match "shopping/delete_relation" => "shopping#delete_relation", via: [:post]
 	match "shopping/cartcountupdate" => "shopping#cartcountupdate", via: [:get]
 	match "shopping/save_quantity" => "shopping#save_quantity", via: [:post]
+
 	match "buy/checkout" => "buy#checkout", via: [:get]
 	match "buy/purchased" => "buy#purchased", via: [:post]
+	match "buy/continue" => "buy#continue", via: [:post]
+
+	match "dorm/for_dormid/:id" => "dorm#for_dormid", via: [:get]
 end
