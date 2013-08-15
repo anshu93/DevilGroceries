@@ -1,6 +1,7 @@
 <ul>
 	<% @item.each do |item| %>
 	<li class="item">
+		<div class = "transparent-dropdown"><img src="logo.png" class="logo-drop"></img><br>Adding to cart...</div>
 		<a class="cbp-vm-image" href="#"><%= image_tag item.image.url %></a>
 		<h3 class="cbp-vm-title"><%= item.name %></h3>
 		<div class="cbp-vm-details">
@@ -22,10 +23,18 @@
 /* Add button Jquery */
 $(document).ready(function(){
 	$(".cbp-vm-add").on("click", function(){
-		$(this).fadeIn(5000).css('background-color', "#d54f30");
+		var item = $(this);
+		var drop = $(this).parent('li').children('.transparent-dropdown').eq(0);
+		drop.fadeIn(500).css('display', 'block');
 		setTimeout(function(){
-			$(".cbp-vm-add").fadeIn(5000).css('background-color', "#47a3da");
-		}, 200);
+			item.delay(1000).fadeIn(5000).css('background-color', "#006600");
+			item.text("Added to cart");
+		}, 1000);
+
+		setTimeout(function(){
+			drop.fadeIn(1000).css('display', "none");
+		}, 1500);
+
 	});
 });
 </script>
