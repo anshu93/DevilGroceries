@@ -21,10 +21,15 @@
 
 <div class="help-text">
 <h1> CHECKOUT </h1>
-Your order total is <%= number_to_currency(@total_price, :precision => 2) %>. Fill out the form below and press the "confirm order" button to place your order.<br>
 <% if @order.campus == "East" %>
-Customers on East will receive their deliveries in their dorm's common room from our delivery agent according to the following schedule: <br>
-<div id="schedule">
+You may pick up your order on
+
+<% if Time.now.saturday? or Time.now.sunday? %>
+
+<% end %>
+
+in your dorm's common room between the times specified below:
+	<div id="schedule">
 	<% @schedules.each do |s| %>
 	<div id="schedule-row">
 		<%= s.dorm %>: <%= s.start_time %> to <%= s.end_time %>
@@ -63,7 +68,7 @@ Customers on East will receive their deliveries in their dorm's common room from
 	You can contact me at
 	<%= f.text_field :email, {:placeholder => "Email address (optional)"} %>
 	<br>
-	<%= button_tag "Confirm Order", {:class => "nl-submit"} %>
+	<%= button_tag "Place Order", {:class => "nl-submit"} %>
 </div>
 	<div class="nl-overlay"></div>
 <% end %>

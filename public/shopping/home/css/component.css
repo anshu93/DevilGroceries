@@ -24,7 +24,7 @@
 
 .sidebar > h1 {
 	display: block;
-	background: #d54f30;
+	background: #001a57;
 	color: #ffffff;
 	width: 100%;
 	cursor: pointer;
@@ -64,7 +64,7 @@
 
 .sidebar ul li a{
 	display: block;
-	color: #d54f30;
+	color: #001a57;
 	width: 100%;
 	cursor: pointer;
 	margin: 4px auto;
@@ -77,7 +77,7 @@
 }
 
 .sidebar ul li a:hover {
-	background: #d54f30;
+	background: #001a57;
 	color: #fff;
 }
 
@@ -99,7 +99,7 @@
 
 .sidebar ul li > ul li a {
 	width: 90%;
-	color: #d54f30;
+	color: #001a57;
 	cursor: pointer;
 	margin: 2px auto;
 	font-size: 0.9em;
@@ -110,7 +110,7 @@
 }
 
 .sidebar ul li > ul li a:hover {
-	background: #d54f30;
+	background: #001a57;
 	color: #fff;
 }
 
@@ -129,7 +129,7 @@
 }
 
 .cart:hover {
-	color: #d54f30;
+	color: #001a57;
 }
 
 .cbp-vm-switcher {
@@ -213,12 +213,12 @@
 }
 
 .cbp-vm-price {
-	color: #d54f30;
+	color: #dd0000;
 }
 
 .cbp-vm-add {
 	color: #fff;
-	background-color: #47a3da;
+	background-color: #001a57;
 	padding: 10px 20px;
 	border-radius: 2px;
 	margin: 10px 0 10px;
@@ -228,7 +228,7 @@
 
 .cbp-vm-add:hover {
 	color: #fff;
-	background: #02639d;
+	background: #dd0000;
 }
 
 .cbp-vm-add:before {

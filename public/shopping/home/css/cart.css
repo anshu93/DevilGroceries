@@ -59,16 +59,17 @@
 
 /* Button 3 */
 .btn-3 {
-	background: #fcad26;
+	background: #006600;
 	color: #fff;
 }
 
 .btn-3:hover {
-	background: #f29e0d;
+	background: #009900;
+	color: #fff;
 }
 
 .btn-3:active {
-	background: #f58500;
+	background: #009900;
 	top: 2px;
 }
 
@@ -151,7 +152,7 @@
 }
 
 .checkout-bar .order-total {
-	color: red;
+	color: #dd0000;
 	font-size: 30px;
 }
 
@@ -195,7 +196,7 @@
 
 #cart-list ul .item-row:hover {
 	/*background-color: #d54f30;*/
-	background-color: #000000; 
+	background-color: #001a57; 
 	color: #ffffff;
 }
 
@@ -239,7 +240,7 @@
 
 .delete-button {
 	padding: 2px;
-	color: #d54f30;
+	color: #dd0000;
 }
 
 .delete-button:hover {

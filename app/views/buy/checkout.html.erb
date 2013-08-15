@@ -21,15 +21,16 @@
 
 <div class="help-text">
 <h1> CHECKOUT </h1>
-Your order total is <%= number_to_currency(@total_price, :precision => 2) %>. Fill out the form below and press the "continue" button to fill out your order details.
+Your order total is <%= number_to_currency(@total_price, :precision => 2) %> <br> Fill out the form below and press "continue" to proceed.
 </div>
 <%= form_for @order, :url => {:controller => "buy", :action => "continue"}, :html => {:method => 'post', :id => "nl-form", :class => "nl-form"} do |f|%>
 	<%= f.hidden_field :order_id, :value => @order.id %>
 	I would like my order delivered to 
-	<%= select_tag(:campus, options_for_select([["East", "East"],["West", "West"], ["Central", "Central"]]), :selected => "East") %> campus
+	<%= select_tag(:campus, options_for_select([["East", "East"],["West", "West"], ["Central", "Central"]]), :selected => "East") %> campus.
 	<br />
 	<div class = "nl-submit-wrap">
 	<%= button_tag "Continue", {:class => "nl-submit"} %>
+	</div>
 	<div class="nl-overlay"></div>
 <% end %>
 <script>
