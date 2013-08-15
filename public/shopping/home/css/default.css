@@ -62,7 +62,9 @@ a:hover {
 .container > header nav {
 	float: right;
 	text-align: center;
-	margin: 30px 0px;
+	margin-bottom: 30px;
+	margin-top: 60px;
+	margin-right: 20px;
 }
 
 .container > header nav a {
@@ -71,12 +73,12 @@ a:hover {
 	position: relative;
 	text-align: left;
 	background: #fff;
-	color: #777;
+	color: #001a57;
 	margin: 0px 20px;
 }
 
 .container > header nav a:hover {
-	color: #081e4f;
+	color: #dd0000;
 }
 
 @media screen and (max-width: 55em) {

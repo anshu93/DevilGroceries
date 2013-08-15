@@ -1,30 +1,34 @@
+#cart-list .checkout-bar {
+	position: relative;
+	width: 100%;
+}
+
 .checkout-bar .saved-total {
-	display: block;
-	width: 50%;
-	max-width: 50%;
-	margin: 0;
+	float: left;
+	width: 30%;
+	margin-top: 5px;
+	font-size: 20px;
 }
 
 .checkout-bar .order-total {
-	display: block;
-	width: 50%;
-	max-width: 50%;
-	margin: 0;
+	float: left;
+	width: 30%;
+	margin-right: 20%;
+	color: #dd0000;
+	font-size: 30px;
 }
 
 /* General button style (reset) */
-.btn {
-
+.checkout-bar .btn {
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
 	color: inherit;
 	background: none;
 	cursor: pointer;
-	padding: 25px 25px;
-	display: inline-block;
-	margin: 15px 30px;
-	margin-left: 100%;
+	padding: 5px 25px;
+	float: right;
+	margin-right: 5px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 700;
@@ -37,8 +41,7 @@
 
 .btn:after {
 	content: '';
-	position: absolute;
-	z-index: -1;
+	z-index: -20;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
@@ -59,25 +62,22 @@
 
 /* Button 3 */
 .btn-3 {
-	background: #006600;
+	background-color: #006600;
 	color: #fff;
 }
 
 .btn-3:hover {
-	background: #009900;
+	background-color: #009900;
 	color: #fff;
 }
 
 .btn-3:active {
 	background: #009900;
-	top: 2px;
+	top: 5px;
 }
 
 .btn-3:before {
-	position: absolute;
 	height: 100%;
-	left: 0;
-	top: 0;
 	line-height: 3;
 	font-size: 140%;
 	width: 60px;
@@ -85,14 +85,12 @@
 
 /* Button 3a */
 .btn-3a {
-	padding: 25px 60px 25px 60px;
+	padding: 5px 60px 25px 60px;
 }
 
 .btn-3a:before {
-	background: rgba(0,0,0,0.05);
+	background-color: #000;
 }
-
-
 
 .cart-dropdown {
 	height: 90%;
@@ -141,23 +139,6 @@
 
 .cart-dropdown #close-button:hover {
 	color: #003333;
-}
-
-#cart-list .checkout-bar {
-	position: relative;
-	width: 73.5%;
-	max-width: 73.5%;
-	background-color: #ffffff;
-	#margin-top: -22px;
-}
-
-.checkout-bar .order-total {
-	color: #dd0000;
-	font-size: 30px;
-}
-
-.checkout-bar .saved-total {
-	font-size: 20px;
 }
 
 .cart-dropdown h1 {
