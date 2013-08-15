@@ -23,8 +23,8 @@
 	border: none;
 	font-family: inherit;
 	font-size: inherit;
-	color: inherit;
-	background: none;
+	color: #fff;
+	border-radius: 7px;
 	cursor: pointer;
 	padding: 5px 25px;
 	float: right;
