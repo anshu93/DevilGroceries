@@ -240,7 +240,7 @@
 .cbp-vm-title-wrap {
 	white-space: pre-line;
 	width: 100%;
-	max-height: 60px;
+	height: 40px;
 }
 
 .cbp-vm-title {
