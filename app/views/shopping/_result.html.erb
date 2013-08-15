@@ -1,7 +1,7 @@
 <ul>
 	<% @item.each do |item| %>
 	<li class="item">
-		<div class = "transparent-dropdown"><img src="logo.png" class="logo-drop"></img><br><p>Adding to cart...</p></div>
+		<div class = "transparent-dropdown"><img src="logo.png" class="logo-drop"></img><br><p>Adding to cart...</p><img src="ajax-loader.gif"></img></div>
 		<a class="cbp-vm-image" href="#"><%= image_tag item.image.url %></a>
 		<h3 class="cbp-vm-title"><%= item.name %></h3>
 		<div class="cbp-vm-details">
@@ -22,7 +22,6 @@
 <script>
 /* Add button Jquery */
 $(document).ready(function(){
-	//$(".cbp-vm-view-grid > .cbp-vm-title").quickfix();
 	$(".cbp-vm-add").on("click", function(){
 		var item = $(this);
 		var drop = $(this).parent('li').children('.transparent-dropdown').eq(0);
