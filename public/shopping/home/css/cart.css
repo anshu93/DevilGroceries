@@ -242,4 +242,17 @@
 	.header-row {
 		font-size: 8px;
 	}
+
+	.checkout-bar .order-total {
+		font-size: 12px;
+		margin-right: 3%;
+	}
+
+	.checkout-bar .saved-total {
+		font-size: 12px;
+	}
+
+	.checkout-bar .btn {
+		font-size: 10px;
+	}
 }
