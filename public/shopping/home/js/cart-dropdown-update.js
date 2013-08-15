@@ -1,5 +1,4 @@
 $(document).ready(function(){
-	$('.cbp-vm-title').quickfit();
 	// on changing the amount of an object in the number field submit the form
 	$('input[name="quantity"]').change(function(){
 		$(this).parent('form').children('input[name="commit"]').eq(0).trigger("click");
