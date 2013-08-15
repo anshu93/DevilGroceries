@@ -4,8 +4,15 @@
 
 /* Loader */
 .logo {
-	width: 250px;
+	width: 221px;
 	height: auto;
+}
+
+.motto {
+	margin-top: 20px;
+	margin-left: -10px;
+	height: 80px;
+	width: auto;
 }
 
 .loader {
