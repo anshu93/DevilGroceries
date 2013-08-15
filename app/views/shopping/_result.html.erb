@@ -1,7 +1,7 @@
 <ul>
 	<% @item.each do |item| %>
 	<li class="item">
-		<div class = "transparent-dropdown"><img src="logo.png" class="logo-drop"></img><br>Adding to cart...</div>
+		<div class = "transparent-dropdown"><img src="logo.png" class="logo-drop"></img><br><p>Adding to cart...</p></div>
 		<a class="cbp-vm-image" href="#"><%= image_tag item.image.url %></a>
 		<h3 class="cbp-vm-title"><%= item.name %></h3>
 		<div class="cbp-vm-details">

@@ -11,8 +11,14 @@
 	display: none;
 }
 
-.transparent-dropdown .logo-drop {
+.transparent-dropdown img.logo-drop {
 	margin: auto;
+	opacity: 1;
+}
+
+.transparent-dropdown p {
+	margin: auto;
+	opacity: 1;
 }
 
 .submit {
