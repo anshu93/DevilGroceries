@@ -1,3 +1,98 @@
+.checkout-bar .saved-total {
+	display: block;
+	width: 50%;
+	max-width: 50%;
+	margin: 0;
+}
+
+.checkout-bar .order-total {
+	display: block;
+	width: 50%;
+	max-width: 50%;
+	margin: 0;
+}
+
+/* General button style (reset) */
+.btn {
+
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 25px;
+	display: inline-block;
+	margin: 15px 30px;
+	margin-left: 100%;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.btn:after {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	position: relative;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* Button 3 */
+.btn-3 {
+	background: #fcad26;
+	color: #fff;
+}
+
+.btn-3:hover {
+	background: #f29e0d;
+}
+
+.btn-3:active {
+	background: #f58500;
+	top: 2px;
+}
+
+.btn-3:before {
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	line-height: 3;
+	font-size: 140%;
+	width: 60px;
+}
+
+/* Button 3a */
+.btn-3a {
+	padding: 25px 60px 25px 60px;
+}
+
+.btn-3a:before {
+	background: rgba(0,0,0,0.05);
+}
+
+
+
 .cart-dropdown {
 	height: 90%;
 	max-height: 100%;
