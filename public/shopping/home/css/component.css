@@ -2,12 +2,11 @@
 	width: 100%;
 	height: 100%;
 	background-color: #fff;
-	#opacity: 0.5;
+	opacity: 0.8;
 	z-index: 10;
 	position: absolute;
 	font-size: 20px;
 	color: #dd0000;
-	#vertical-align: middle;
 	text-align: center;
 	display: none;
 }
