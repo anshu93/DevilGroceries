@@ -2,10 +2,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="checkout/css/default.css" />
-	<link rel="stylesheet" type="text/css" href="checkout/css/component.css" />
-	<script src="checkout/js/modernizr.custom.js"></script>
-	<script src="checkout/js/nlform.js"></script>
+	<link rel="stylesheet" type="text/css" href="continue/css/default.css" />
+	<link rel="stylesheet" type="text/css" href="continue/css/component.css" />
+	<script src="continue/js/modernizr.custom.js"></script>
+	<script src="continue/js/nlform.js"></script>
 </head>
 <body>
 
@@ -22,32 +22,35 @@
 <div class="help-text">
 <h1> CHECKOUT </h1>
 <% if @order.campus == "East" %>
-You may pick up your order on
+You may pick up your order 
 
 <% if Time.now.saturday? or Time.now.sunday? %>
-
+next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %>th 
+<% else %>
+this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>th
 <% end %>
-
-in your dorm's common room between the times specified below:
-	<div id="schedule">
+ in your dorm's common room between the times specified below:
+<div class="schedule">
+	<ul>
 	<% @schedules.each do |s| %>
-	<div id="schedule-row">
-		<%= s.dorm %>: <%= s.start_time %> to <%= s.end_time %>
-	</div>
+		<li class="schedule-row">
+			<%= s.dorm %>: <%= s.start_time %> to <%= s.end_time %>
+		</li>
 	<% end %>
+	</ul>
 <% end %>
 </div>
 </div id = "checkout-form">
 <%= form_for @order, :url => {:controller => "buy", :action => "purchased"}, :html => {:method => 'post', :id => "nl-form", :class => "nl-form"} do |f|%>
 	<%= f.hidden_field :order_id, :value => @order.id %>
 	My name is 
-	<%= f.text_field :user_id, {:placeholder => "Enter name here"} %>
+	<%= f.text_field :user_id, {:placeholder => "First and Last", "data-subline" => "eg. John Doe"} %>
 
 
 	<% if @order.campus == "East" %>
-	and I live in 
+	, and I live in 
 	<%= select_tag(:building, options_for_select([["Alspaugh","Alspaugh"],["Aycock", "Aycock"],["Bassett","Bassett"],["Bell Tower", "Bell Tower"],["Blackwell","Blackwell"],["Brown","Brown"],["Epworth","Epworth"],["Gilbert-Addoms","Gilbert-Addoms"],["Giles","Giles"],["Jarvis","Jarvis"],["Pegram","Pegram"],["Randolph","Randolph"],["Southgate","Southgate"],["Wilson","Wilson"]])) %>
-	dorm
+	dorm.
 	
 	<% elsif @order.campus == "West" %>
 	I live in 
@@ -66,7 +69,7 @@ in your dorm's common room between the times specified below:
 	<% end %>
 	<br>
 	You can contact me at
-	<%= f.text_field :email, {:placeholder => "Email address (optional)"} %>
+	<%= f.text_field :email, {:placeholder => "email address", "data-subline" => "eg. user@example.com"} %>.
 	<br>
 	<%= button_tag "Place Order", {:class => "nl-submit"} %>
 </div>

@@ -1,30 +1,29 @@
 GIT
   remote: git://github.com/ernie/ransack.git
-  revision: 39da31f8ac8f8a9852a217bebc494548f9bb89c3
-  branch: rails-4
+  revision: be7c227a9547a359691258b0b10fb1842ae8de41
   specs:
-    ransack (0.7.3)
-      actionpack (~> 4.0.0)
-      activerecord (~> 4.0.0)
+    ransack (1.0.0)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
       polyamorous (~> 0.6.0)
 
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: a9949c1524205928b18597f840e83478ba97c2ef
+  revision: 72a9c30cef47b3f38c38039de021aaa3194c188b
   branch: rails4
   specs:
     activeadmin (0.6.0)
       arbre (>= 1.0.1)
       bourbon (>= 1.0.0)
       coffee-rails (>= 3.2.0)
-      devise (>= 3.0.0.rc)
-      formtastic (>= 2.0.0)
-      inherited_resources (>= 1.3.1)
+      devise (>= 3.0.2)
+      formtastic (>= 2.3.0.rc2)
+      inherited_resources (>= 1.4.1)
       jquery-rails (>= 3.0.0)
       jquery-ui-rails (>= 4.0.0)
       kaminari (>= 0.13.0)
       rails (>= 3.2.0)
-      ransack (>= 0.7.0)
+      ransack (>= 1.0.0)
       sass-rails (>= 3.2.0)
 
 GIT
@@ -44,12 +43,13 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 8e0327e2031985e7888b0c4bc87a450377bed886
+  revision: 58cbd915124c42fcee365581a7966a7edfdeadfe
   specs:
-    devise (3.0.0)
+    devise (3.1.0.rc)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
+      thread_safe (~> 0.1)
       warden (~> 1.2.3)
 
 GIT
@@ -89,8 +89,8 @@ GEM
     arbre (1.0.1)
       activesupport (>= 3.0.0)
     arel (4.0.0)
-    atomic (1.1.10)
-    aws-sdk (1.14.1)
+    atomic (1.1.13)
+    aws-sdk (1.15.0)
       json (~> 1.4)
       nokogiri (< 1.6.0)
       uuidtools (~> 2.1)
@@ -119,7 +119,7 @@ GEM
       actionpack (>= 3.2, < 5)
       activesupport (>= 3.2, < 5)
     hike (1.2.3)
-    i18n (0.6.4)
+    i18n (0.6.5)
     jquery-rails (3.0.4)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
@@ -133,9 +133,9 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    mime-types (1.23)
+    mime-types (1.24)
     minitest (4.7.5)
-    multi_json (1.7.7)
+    multi_json (1.7.9)
     nokogiri (1.5.10)
     orm_adapter (0.4.0)
     paperclip (3.5.1)
