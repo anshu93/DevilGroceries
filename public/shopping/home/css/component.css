@@ -130,13 +130,13 @@
 	padding-top: 9px;
 }
 .cart {
-	color: #081e4f;
+	color: #001a57;
 	font-size: 20px;
 	line-height: 20px;
 }
 
 .cart:hover {
-	color: #001a57;
+	color: #dd0000;
 }
 
 .cbp-vm-switcher {
