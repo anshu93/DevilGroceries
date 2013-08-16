@@ -10,5 +10,7 @@ class Order < ActiveRecord::Base
 		id 
 	end	
 	scope :date, -> {where("date < ?", (Date.today.end_of_week - 1).strftime("%m/%d/%Y"))}
+	scope :cart_status, -> {where(cart_status: "confirmed")}
+
 	validates :user_id, :campus, :building, presence: true
 end

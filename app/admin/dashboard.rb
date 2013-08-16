@@ -3,7 +3,7 @@ ActiveAdmin.register_page "Dashboard" do
 		columns do
 			column do
 				panel "Recent Orders" do
-					table_for Order.date do
+					table_for Order.date.cart_status do
 						column :user_id 
 						column :campus
 						column :cart_status
