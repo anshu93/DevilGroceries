@@ -3,7 +3,7 @@ ActiveAdmin.register_page "Dashboard" do
 		columns do
 			column do
 				panel "Recent Orders" do
-					table_for Order.where(cart_status: "confirmed").where(date: Date.today.strftime("%m/%d/%Y")) do
+					table_for Order.where(cart_status: "confirmed").where(date: < Date.today.strftime("%m/%d/%Y")) do
 						column :user_id 
 						column :campus
 						column :cart_status
