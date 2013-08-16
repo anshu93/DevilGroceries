@@ -1,14 +1,17 @@
 ActiveAdmin.register_page "Dashboard" do
-
-  menu :priority => 1, :label => proc{ I18n.t("active_admin.dashboard") }
-
-  content :title => proc{ I18n.t("active_admin.dashboard") } do
-    div :class => "blank_slate_container", :id => "dashboard_default_message" do
-      span :class => "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
-      end
-    end
-
-  end # content
+	content :title => proc{ I18n.t("active_admin.dashboard") } do
+		columns do
+			column do
+				panel "Recent Orders" do
+					table_for Order.where("cart_status == ?", "confirmed").where("date < ?", Date.today.end_of_week - 2) do
+						column :user_id 
+						column :room
+						column :cart_status
+						column :date
+					end
+					strong { link_to "View All orders", admin_orders_path }
+				end
+			end
+		end
+	end
 end

@@ -21,7 +21,6 @@
 
 <div class="help-text">
 <h1> CHECKOUT </h1>
-<% if @order.campus == "East" %>
 You may pick up your order 
 
 <% if Time.now.saturday? or Time.now.sunday? %>
@@ -29,6 +28,7 @@ next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.to
 <% else %>
 this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>th
 <% end %>
+<% if @order.campus == "East" %>
  in your dorm's common room between the times specified below:
 <div class="schedule">
 	<ul>
@@ -38,6 +38,8 @@ this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of
 		</li>
 	<% end %>
 	</ul>
+<% else %>
+at your door.
 <% end %>
 </div>
 </div id = "checkout-form">

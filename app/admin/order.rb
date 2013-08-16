@@ -33,6 +33,8 @@ ActiveAdmin.register Order do
 			f.input :room
 			f.input :phone
 			f.input :email
+			f.input :date
+			f.input :time
 			f.input :status, :label => "STATUS", :as => :select, :collection => Order::ORDER_STATUS
 			f.input :cart_status, :label => "CART STATUS", :as => :select, :collection => Order::CART_STATUS
 
