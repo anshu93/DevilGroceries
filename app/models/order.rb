@@ -5,9 +5,10 @@ class Order < ActiveRecord::Base
 	ORDER_STATUS = ['DELIVERED', 'UNDELIVERED', 'ATTEMPTED']
 	CAMPUS = ['West', 'East', 'Central']
 	BUILDING = ['Few', 'Kilgo', 'Edens']
+	CART_STATUS = ['pending', 'confirmed']
 	def display_name
 		id 
 	end	
-	CART_STATUS = ['pending', 'confirmed']
+	scope :date, -> {where("date < ?", (Date.today.end_of_week - 1).strftime("%m/%d/%Y"))}
 	validates :user_id, :campus, :building, presence: true
 end
