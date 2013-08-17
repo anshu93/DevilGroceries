@@ -1,13 +1,17 @@
 ActiveAdmin.register_page "Dashboard" do
-	content :title => proc{ I18n.t("active_admin.dashboard") } do
+  	content :title => proc{ I18n.t("active_admin.dashboard") } do
 		columns do
 			column do
-				panel "Recent Orders" do
+				panel "Orders for the coming Sunday" do
 					table_for Order.date.cart_status do
-						column :user_id 
+						column :user_id do |order|
+							link_to order.user_id, admin_order_path(order)
+						end
 						column :campus
-						column :cart_status
+						column :building
+						column :room
 						column :date
+						column :time
 					end
 					strong { link_to "View All orders", admin_orders_path }
 				end

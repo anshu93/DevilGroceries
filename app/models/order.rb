@@ -9,8 +9,21 @@ class Order < ActiveRecord::Base
 	def display_name
 		id 
 	end	
-	scope :date, -> {where("date < ?", (Date.today.end_of_week - 1).strftime("%m/%d/%Y"))}
+	# filter if applicable for this sunday
+	scope :date, -> {where("date < ? and date > ?", (Date.today.end_of_week - 1).strftime("%m/%d/%Y"), (Date.today.last_week.end_of_week - 2).strftime("%m/%d/%Y"))}
+	# filter by west dorm
 	scope :cart_status, -> {where(cart_status: "confirmed")}
+	scope :few, -> {where(building: "Few")}
+	scope :kilgo, -> {where(building: "Kilgo")}
+	scope :edens, -> {where(building: "Edens")}
+	scope :craven, -> {where(building: "Craven")}
+	scope :crowell, -> {where(building: "Crowell")}
+	scope :keohane, -> {where(building: "Keohane")}
+	scope :wannamaker, -> {where(building: "Wannamaker")}
+	# filter by campus
+	scope :west, -> {where(campus: "West")}
+	scope :east, -> {where(campus: "East")}
+	scope :central, -> {where(campus: "Central")}
 
 	validates :user_id, :campus, :building, presence: true
 end

@@ -6,6 +6,7 @@ ActiveAdmin.register Item do
 		column :supply_price
 		column :duke_price
 		column :unit
+		column :fresh
 		column :active
 		column "Image" do |item|
 			link_to(image_tag(item.image.url(), :height => '60' ), admin_item_path(item))
@@ -22,6 +23,7 @@ ActiveAdmin.register Item do
 			f.input :category
 			f.input :subcategory
 			f.input :unit
+			f.input :fresh, :label => "Needs to be bought fresh?", :as => :select, :collection => Item::FRESH
 			f.input :active, :label => "status", :as => :select, :collection => Item::ITEM_STATUS
 			f.input :image, :as => :file, :hint => f.template.image_tag(f.object.image.url(:original))
 		end
