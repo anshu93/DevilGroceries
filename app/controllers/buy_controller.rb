@@ -57,7 +57,7 @@ class BuyController < ApplicationController
 		if Order.exists?(id)
 			@order = Order.find(id)
 			@order.update(:user_id => name, :building => building, :room => room, :email => email, :date => Date.today.strftime("%m/%d/%Y"), :time => Time.now.to_s(:time), :status => "undelivered", :cart_status => "confirmed")
-			#UserMailer.confirmation(@order).deliver
+			UserMailer.confirmation(@order).deliver
 			cookies.delete :id
 		end
 	end
