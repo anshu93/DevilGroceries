@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/ernie/ransack.git
-  revision: be7c227a9547a359691258b0b10fb1842ae8de41
+  revision: da71de7441436df569b86dd2328112980adfe576
   specs:
     ransack (1.0.0)
       actionpack (>= 3.0)
@@ -28,7 +28,7 @@ GIT
 
 GIT
   remote: git://github.com/josevalim/inherited_resources.git
-  revision: ae1516a3f1a01f98beac3334f76831a1c793c521
+  revision: 1242d7680a61ee731ea260dd24293b6b11fecedd
   specs:
     inherited_resources (1.4.1)
       has_scope (~> 0.6.0.rc)
@@ -43,9 +43,9 @@ GIT
 
 GIT
   remote: git://github.com/plataformatec/devise.git
-  revision: 58cbd915124c42fcee365581a7966a7edfdeadfe
+  revision: ea870e0636fef5486fe2ba4718f76c4eac986555
   specs:
-    devise (3.1.0.rc)
+    devise (3.1.0.rc2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -185,7 +185,7 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
-    sqlite3 (1.3.7)
+    sqlite3 (1.3.8)
     thin (1.5.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -194,7 +194,8 @@ GEM
     thread_safe (0.1.2)
       atomic
     tilt (1.4.1)
-    treetop (1.4.14)
+    tlsmail (0.0.1)
+    treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
     turbolinks (1.3.0)
@@ -230,5 +231,6 @@ DEPENDENCIES
   sass-rails
   sqlite3
   thin
+  tlsmail
   turbolinks
   uglifier (>= 1.3.0)

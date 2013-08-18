@@ -69,7 +69,7 @@ ActiveAdmin.register_page "Total Items for EAST campus" do
 						end
 					end
 
-					panel "Total items needed this Sunday for EAST campus" do
+					panel "Items needed this Sunday for EAST campus" do
 						table_for items_total do 
 							column :name 
 							column("Quantity") {quants_total.shift }

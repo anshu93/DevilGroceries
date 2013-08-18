@@ -2,6 +2,8 @@ Gro::Application.routes.draw do
 	devise_for :admin_users, ActiveAdmin::Devise.config
 	ActiveAdmin.routes(self)
 	root "shopping#home"
+
+	match "shopping/home" => "shopping#home", :via => [:get]
 	
 	match "welcome/home" => "welcome#home", :via => [:get]
 	match "welcome/about" => "welcome#about", :via => [:get]

@@ -26,17 +26,6 @@
 }
 
 /* Loader */
-.logo {
-	width: 221px;
-	height: auto;
-}
-
-.motto {
-	margin-top: 20px;
-	margin-left: -10px;
-	height: 80px;
-	width: auto;
-}
 
 .loader {
 	display: block;

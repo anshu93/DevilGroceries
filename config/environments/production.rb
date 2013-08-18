@@ -85,5 +85,24 @@ Gro::Application.configure do
     :access_key_id => 'AKIAJQWVECXV7QRAYIAA',
     :secret_access_key => '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'
   }
+
+      require 'tlsmail'
+      Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+      ActionMailer::Base.delivery_method = :smtp
+      ActionMailer::Base.perform_deliveries = true
+      ActionMailer::Base.raise_delivery_errors = true
+      ActionMailer::Base.smtp_settings = {
+          :address =>  "smtp.gmail.com",
+          :port =>  "587",
+          :domain =>  "yourdomin.com",
+          :enable_starttls_auto =>  true,
+          :authentication => :login,
+          :user_name => "anshuman.prasad93@gmail.com",
+          :password => "arsenal0"
+      }
+ 
+    config.action_mailer.raise_delivery_errors = true
+
+
 }
 end

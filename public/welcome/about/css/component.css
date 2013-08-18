@@ -11,41 +11,27 @@
 
 .help-text {
 	text-align: center;
-	max-height: 80%;
 	font-weight: 300;
-}
-/* Styling for the schedule div */
-
-.schedule {
-	width: 80%;
-	text-align: center;
+	color: #000;
 }
 
-.schedule ul {
-	margin-left: 20%;
-}
-
-.schedule ul li {
-	float: right;
+.about-text {
 	text-align: left;
-	display: inline;
-	width: 40%;
-	margin-left: 10px;
-	margin-right: 10px;
-	list-style-type: none;
+	width: 50%;
+	position: absolute;
+	left: 25%;
+	line-height: 1.5em;
+	font-size: 1.2em;
 }
-
-
 
 /* general style for the form */
 .nl-form {
-	float: left;
+	font-weight: 300;
 	text-align: center;
 	width: 100%;
 	margin: 0.3em auto 0 auto;
 	font-size: 2em;
 	line-height: 1.5;
-	font-weight: 300;
 }
 
 .nl-form ul {

@@ -16,6 +16,7 @@ group :production do
 	gem 'thin'
 	gem 'rails_12factor'
 	#gem 'newrelic_rpm'
+	gem 'tlsmail'
 end
 
 group :assets do

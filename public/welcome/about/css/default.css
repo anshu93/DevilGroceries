@@ -26,7 +26,6 @@ body, html { font-size: 100%; 	padding: 0; margin: 0; width: 100%; height: 100%;
 body {
 	font-family: 'Lato', Calibri, Arial, sans-serif;
 	color: #777;
-	
 }
 
 a {
@@ -39,7 +38,6 @@ a:hover {
 }
 
 .container {
-	height: 100%;
 	position: relative;
 }
 
