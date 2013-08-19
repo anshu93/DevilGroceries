@@ -26,7 +26,7 @@
 	<div class="order-total">
 	Subtotal: <%= number_to_currency(@total_price, :precision => 2) %><br>
 	<div class="saved-total">
-	<% if @saved.to_f > 0 %>
+	<% if @saved.to_f > 5 %>
 	You save <%= number_to_currency(@saved, :precision => 2) %>
 	<% end %>
 	</div>
