@@ -54,12 +54,17 @@ class BuyController < ApplicationController
 		name = params[:order][:user_id]
 		building = params[:building]
 		room = params[:order][:room]
+		if params[:order][:house] != nil
+			house = params[:order][:house]
+		else
+			house = "N/A"
+		end
 		# phone = params[:order][:phone]
 		email = params[:order][:email]
 		if Order.exists?(id)
 			@order = Order.find(id)
-			@order.update(:user_id => name, :building => building, :room => room, :email => email, :date => Date.today.strftime("%m/%d/%Y"), :time => Time.now.to_s(:time), :status => "undelivered", :cart_status => "confirmed")
-			#UserMailer.confirmation(@order).deliver
+			@order.update(:user_id => name, :building => building, :room => room, :house => house, :email => email, :date => Date.today.strftime("%m/%d/%Y"), :time => Time.now.to_s(:time), :status => "undelivered", :cart_status => "confirmed")
+			UserMailer.confirmation(@order).deliver
 			cookies.delete :id
 		end
 	end
