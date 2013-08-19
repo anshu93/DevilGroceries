@@ -11,6 +11,22 @@ class Order < ActiveRecord::Base
 	end	
 	# filter if applicable for this sunday
 	scope :date, -> {where("date < ? and date > ?", (Date.today.end_of_week - 1).strftime("%m/%d/%Y"), (Date.today.last_week.end_of_week - 2).strftime("%m/%d/%Y"))}
+	# filter by east dorm
+	scope :alspaugh, -> {where(building: "Alspaugh")}
+	scope :aycock, -> {where(building: "Aycock")}
+	scope :bassett, -> {where(building: "Bassett")}
+	scope :belltower, -> {where(building: "Bell Tower")}
+	scope :blackwell, -> {where(building: "Blackwell")}
+	scope :brown, -> {where(building: "Brown")}
+	scope :epworth, -> {where(building: "Epworth")}
+	scope :ga, -> {where(building: "Gilbert-Addoms")}
+	scope :giles, -> {where(building: "Giles")}
+	scope :jarvis, -> {where(building: "Jarvis")}
+	scope :pegram, -> {where(building: "Pegram")}
+	scope :randolph, -> {where(building: "Randolph")}
+	scope :southgate, -> {where(building: "Southgate")}
+	scope :wilson, -> {where(building: "Wilson")}
+
 	# filter by west dorm
 	scope :cart_status, -> {where(cart_status: "confirmed")}
 	scope :few, -> {where(building: "Few")}
