@@ -8,9 +8,23 @@ next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.to
 <% else %>
 this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>th
 <% end %><br><br>
+
+
+<table>
+<tr>
+<td><b>Item Name</b></td>
+<td><b>Quantity</b></td>
+<td><b>Unit</b></td>
+<td><b>Price</b></td>
+</tr>
 <% @list.each do |l| %>
-<%= l.item.name %>, <%= l.quantity %> <%= l.item.unit %>, <%= number_to_currency(l.item.selling_price, :precision => 2) %><br>
+<tr>
+<td><%= l.item.name %></td><td> <%= l.quantity %></td><td> <%= l.item.unit %></td><td><%= number_to_currency(l.item.selling_price * l.quantity, :precision => 2) %></td>
+</tr>
 <% end %>
+</table>
+
+
 <br>
 Subtotal: <%= number_to_currency(@order.total, :precision => 2) %><br> 
 Delivery Charge: + $3.99<br>

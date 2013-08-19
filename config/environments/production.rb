@@ -92,8 +92,8 @@ Gro::Application.configure do
     address:              'smtp.gmail.com',
     port:                 587,
     domain:               'groceriesondemand.com',
-    user_name:            'anshuman.prasad93@gmail.com',
-    password:             'arsenal0',
+    user_name:            'devilgroceries@gmail.com',
+    password:             'Godisgreat2015',
     authentication:       'plain',
     enable_starttls_auto: true  }
 
