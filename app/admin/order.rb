@@ -8,6 +8,7 @@ ActiveAdmin.register Order do
 		column :campus
 		column :building
 		column :room
+		column :house
 		column :phone
 		column :email
 		column :date
@@ -32,6 +33,7 @@ ActiveAdmin.register Order do
 			f.input :campus, :label => "campus", :as => :select, :collection => Order::CAMPUS
 			f.input :building, :label => "building", :as => :select, :collection => Order::BUILDING
 			f.input :room
+			f.input :house
 			f.input :phone
 			f.input :email
 			f.input :date
@@ -48,6 +50,7 @@ ActiveAdmin.register Order do
 			attributes_table_for order do
 				row("user") { order.user_id }
 				row("room") { order.room }
+				row("house") { order.house }
 				row("building") { order.building }
 				row("campus") { order.campus }
 				row("phone number") { order.phone }
