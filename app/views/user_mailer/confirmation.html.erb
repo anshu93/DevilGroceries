@@ -19,10 +19,10 @@ this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of
 </tr style = "border-bottom: 1px solid black;">
 <% @list.each do |l| %>
 <tr>
-<td style = "border-right: 1px solid black; text-align:center;"><b><%= l.item.name %></b></td>
-<td style = "border-right: 1px solid black; text-align:center;"><b><%= l.quantity %></b></td>
-<td style = "border-right: 1px solid black; text-align:center;"><b>%= l.item.unit %></b></td>
-<td style = "text-align:center;"><b><%= number_to_currency(l.item.selling_price * l.quantity, :precision => 2) %></b></td>
+<td style = "border-right: 1px solid black; text-align:center;"><%= l.item.name %></td>
+<td style = "border-right: 1px solid black; text-align:center;"><%= l.quantity %></b></td>
+<td style = "border-right: 1px solid black; text-align:center;"><%= l.item.unit %></td>
+<td style = "text-align:center;"><%= number_to_currency(l.item.selling_price * l.quantity, :precision => 2) %></td>
 </tr style = "border-bottom: 1px solid black;">
 <% end %>
 </table>
