@@ -34,7 +34,7 @@
 
 	<% if @total_price < 10 %>
 	<div class = "min-order">
-	Subtotal must exceed $10 to checkout.<br>Add <%= number_to_currency(10 - @total_price, :precision => 2) %> worth of items to checkout.
+	Subtotal must exceed $10.00 to checkout.<br>Add <%= number_to_currency(10 - @total_price, :precision => 2) %> worth of items to checkout.
 	</div>
 	<% else %>
 	<%= link_to("Checkout", {:controller => "buy", :action => "checkout"}, {:class => "btn btn-3 btn-3a icon-cart"})  %>
