@@ -2,6 +2,7 @@ class BuyController < ApplicationController
 	def checkout
 		if cookies[:id] != nil and Order.exists?(cookies[:id])
 			@order = Order.find(cookies[:id])
+
 			@list = @order.orderitemrelations
 		else
 			@list = 0
@@ -45,6 +46,7 @@ class BuyController < ApplicationController
 		end
 		@saved = total_duke_price
 		@schedules = East.all
+	    @order.update(:total => @total_price)
 	end
 
 	def purchased

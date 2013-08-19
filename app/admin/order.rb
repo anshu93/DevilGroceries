@@ -12,6 +12,7 @@ ActiveAdmin.register Order do
 		column :email
 		column :date
 		column :time
+		column :total
 		column :status
 		column :cart_status
 		default_actions
@@ -53,6 +54,9 @@ ActiveAdmin.register Order do
 				row("time ordered") { order.time }
 				row("date ordered") { order.date }
 				row("status") { order.status }
+				row("subtotal") {number_to_currency(order.total, :precision => 2)}
+				row("delivery charge") {"+ $3.99"}
+				row("total") {number_to_currency(order.total + 3.99, :precision => 2)}
 			end
 		end
 		panel "Ordered Items" do

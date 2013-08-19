@@ -1,7 +1,8 @@
 class UserMailer < ActionMailer::Base
   default from: "anshuman"
-  def confirmation(user)
-  	@user = user
-  	mail(:to => user.email, :subject => "Welcome")
+  def confirmation(order)
+  	@order = order
+  	@list = @order.orderitemrelations
+  	mail(:to => order.email, :subject => "Confirmation Receipt")
   end
 end

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head></head>
+<body>
+Dear <%= @order.user_id %>, <br><br>
+This is your Groceries on Demand receipt. Below is a summary of items purchased. You will receive your order 
+<% if Time.now.saturday? or Time.now.sunday? %>
+next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %>th 
+<% else %>
+this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>th
+<% end %><br><br>
+<% @list.each do |l| %>
+<%= l.item.name %>, <%= l.quantity %> <%= l.item.unit %>, <%= number_to_currency(l.item.selling_price, :precision => 2) %><br>
+<% end %>
+<br>
+Subtotal: <%= number_to_currency(@order.total, :precision => 2) %><br> 
+Delivery Charge: + $3.99<br>
+<b>Total: <%= number_to_currency(@order.total + 3.99, :precision => 2) %></b>
+<br><br>
+Thank you for your purchase!
+<br>
+The Groceries on Demand team
+</body>
+</html>
