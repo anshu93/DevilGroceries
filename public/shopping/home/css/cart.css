@@ -4,21 +4,26 @@
 	width: 100%;
 }
 
-.checkout-bar .saved-total {
-	float: left;
-	width: 30%;
-	margin-top: 5px;
-	font-size: 20px;
-	margin-bottom: 50px;
-}
-
 .checkout-bar .order-total {
 	float: left;
 	width: 30%;
-	margin-right: 20%;
+	margin-right: 0;
 	color: #dd0000;
 	font-size: 30px;
+	margin-bottom: 0;
+}
+
+.checkout-bar .order-total .saved-total {
+	font-size: 0.6em;
 	margin-bottom: 50px;
+	color: #001a57;
+}
+
+.checkout-bar .min-order {
+	color: #001a57;
+	text-align: center;
+	margin-right: 8px;
+	max-height: 100%;
 }
 
 /* General button style (reset) */
@@ -31,7 +36,7 @@
 	cursor: pointer;
 	padding: 5px 25px;
 	float: right;
-	margin-right: 5px;
+	margin-right: 8px;
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	font-weight: 700;
@@ -256,6 +261,10 @@
 	}
 
 	.checkout-bar .btn {
+		font-size: 10px;
+	}
+
+	.checkout-bar .min-order {
 		font-size: 10px;
 	}
 }

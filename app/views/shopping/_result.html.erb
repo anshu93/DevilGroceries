@@ -2,7 +2,7 @@
 	<% @item.each do |item| %>
 	<li class="item">
 		<div class = "transparent-dropdown"><img src="logo.png" class="logo-drop"></img><br><p>Adding to cart...</p><img src="ajax-loader.gif"></img></div>
-		<a class="cbp-vm-image" href="#"><%= image_tag item.image.url %></a>
+		<%= image_tag item.image.url, {:class => "cbp-vm-image"} %>
 		<h3 class="cbp-vm-title"><%= item.name %></h3>
 		<div class="cbp-vm-details">
 			<% if item.duke_price.blank? %>

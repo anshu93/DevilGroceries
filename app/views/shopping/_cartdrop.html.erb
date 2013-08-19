@@ -24,14 +24,21 @@
 </ul>
 <div class="checkout-bar">
 	<div class="order-total">
-	Order Total: <%= number_to_currency(@total_price, :precision => 2) %><br>
-	</div>
+	Subtotal: <%= number_to_currency(@total_price, :precision => 2) %><br>
 	<div class="saved-total">
 	<% if @saved.to_f > 0 %>
 	You save <%= number_to_currency(@saved, :precision => 2) %>
 	<% end %>
 	</div>
+	</div>
+
+	<% if @total_price < 10 %>
+	<div class = "min-order">
+	Subtotal must exceed $10 to checkout.<br>Add <%= number_to_currency(10 - @total_price, :precision => 2) %> worth of items to checkout.
+	</div>
+	<% else %>
 	<%= link_to("Checkout", {:controller => "buy", :action => "checkout"}, {:class => "btn btn-3 btn-3a icon-cart"})  %>
+	<% end %>
 </div>
 <% end %>
 <script src="shopping/home/js/cart-dropdown-update.js"></script>
