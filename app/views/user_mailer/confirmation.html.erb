@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <head></head>
 <body>
+<img src="../logo.png"></img>
 Dear <%= @order.user_id %>, <br><br>
-This is your Groceries on Demand receipt. Below is a summary of items purchased. You will receive your order 
+This is your DevilGroceries receipt. Below is a summary of items purchased. You will receive your order 
 <% if Time.now.saturday? or Time.now.sunday? %>
 next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %>th 
 <% else %>
