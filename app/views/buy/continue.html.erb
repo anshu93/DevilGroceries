@@ -50,7 +50,7 @@ at your door.
 <%= form_for @order, :url => {:controller => "buy", :action => "purchased"}, :html => {:method => 'post', :id => "nl-form", :class => "nl-form"} do |f|%>
 	<%= f.hidden_field :order_id, :value => @order.id %>
 	My name is 
-	<%= f.text_field :user_id, {:placeholder => "First and Last", "data-subline" => "eg. John Doe"} %>.
+	<%= f.text_field :user_id, {:placeholder => "First and Last", "data-subline" => "eg. John Doe"} %>
 
 
 	<% if @order.campus == "East" %>
@@ -59,11 +59,11 @@ at your door.
 	dorm.
 	
 	<% elsif @order.campus == "West" %>
-	I live in 
+	, and I live in 
 	<%= select_tag(:building, options_for_select([["Craven", "Craven"],["Crowell","Crowell"],["Wannamaker","Wannamaker"],["Edens", "Edens"],["Few","Few"],["Kilgo","Kilgo"],["Keohane","Keohane"]])) %>
 	quad, room 
 	<%= f.text_field :room, {:placeholder => "number", "data-subline" => "eg. 230, 015, etc."} %>
-	<br>and house/building 
+	<br>, and house/building 
 	<%= f.text_field :house, {:placeholder => "number", "data-subline" => "eg. 1A, FF, VO, 4E, Wannamaker residents may leave blank "} %>
 
 
