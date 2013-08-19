@@ -300,7 +300,7 @@
 }
 
 .cbp-vm-view-grid .cbp-vm-image {
-	max-height: 160px;
+	height: 160px;
 	max-width: 270px;
 }
 
