@@ -12,14 +12,14 @@ this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of
 
 <table style = "border: 1px solid black; text-align:center;">
 <tr>
-<td style = "border: 1px solid black; text-align:center;"><b>Item Name</b></td>
-<td style = "border: 1px solid black; text-align:center;"><b>Quantity</b></td>
-<td style = "border: 1px solid black; text-align:center;"><b>Unit</b></td>
-<td style = "border: 1px solid black; text-align:center;"><b>Price</b></td>
+<td style = "border-right: 1px solid black; border-bottom: 1px solid black; text-align:center;"><b>Item Name</b></td>
+<td style = "border-right: 1px solid black; border-bottom: 1px solid black; text-align:center;"><b>Quantity</b></td>
+<td style = "border-right: 1px solid black; border-bottom: 1px solid black; text-align:center;"><b>Unit</b></td>
+<td style = "border-bottom: 1px solid black; text-align:center;"><b>Price</b></td>
 </tr>
 <% @list.each do |l| %>
 <tr>
-<td style = "border: 1px solid black; text-align:center;"><%= l.item.name %></td><td style = "border: 1px solid black; text-align:center;"> <%= l.quantity %></td><td style = "border: 1px solid black; text-align:center;"> <%= l.item.unit %></td><td style = "border: 1px solid black; text-align:center;"><%= number_to_currency(l.item.selling_price * l.quantity, :precision => 2) %></td>
+<td style = "border-right: 1px solid black; border-bottom: 1px solid black; text-align:center;"><%= l.item.name %></td><td style = "border-right: 1px solid black; border-bottom: 1px solid black; text-align:center;"> <%= l.quantity %></td><td style = "border-right: 1px solid black; border-bottom: 1px solid black; text-align:center;"> <%= l.item.unit %></td><td sstyle = "border-bottom: 1px solid black; text-align:center;"><%= number_to_currency(l.item.selling_price * l.quantity, :precision => 2) %></td>
 </tr>
 <% end %>
 </table>
