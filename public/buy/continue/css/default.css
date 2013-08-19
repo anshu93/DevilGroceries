@@ -45,7 +45,7 @@ a:active {
 
 .container > header {
 	text-align: center;
-	background: rgba(0,0,0,0.01);
+	background: #fff;
 }
 
 .container > header h1 {
