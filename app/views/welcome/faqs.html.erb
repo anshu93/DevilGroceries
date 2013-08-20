@@ -1,6 +1,7 @@
 <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="faqs/css/default.css" />
 	<link rel="stylesheet" type="text/css" href="faqs/css/component.css" />
+	<script src="faqs/js/faq.js"></script>
 </head>
 <body>
 <div class="container">
@@ -18,13 +19,21 @@
 		<!-- Header end -->
 <div class="help-text">
 	<h1>FREQUENTLY ASKED QUESTIONS</h1>
-	<div class="about-text">
-	<div class="question">
-		
-	</div>
-	</div>
-</div>
 
+	<div class="about-text">
+		<% Faq.all.each do |f| %>
+		<div class="faq">
+
+			<div class="question">
+				<b>Q) <%= f.question %> </b><i class="icon-plus-sign"></i>
+			</div>
+			<div class="answer">
+				A) <%= f.answer %>
+			</div>
+
+		</div>
+		<% end %>
+	</div>
 </div>
 
 </body>

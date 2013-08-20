@@ -15,29 +15,13 @@
 	color: #000;
 }
 
-.help-text .about-text {
+.about-text {
 	text-align: center;
 	width: 50%;
-	left: 25%;
 	position: absolute;
+	left: 25%;
 	line-height: 1.5em;
 	font-size: 1.2em;
-}
-
-.help-text .about-text .question {
-	color: #000;
-	margin-bottom: 10px;
-}
-
-.icon-plus-sign {
-	font-size: 0.8em;
-}
-
-
-
-.help-text .about-text .answer {
-	margin-bottom: 10px;
-	display: none;
 }
 
 /* general style for the form */
