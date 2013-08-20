@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130820054545) do
+ActiveRecord::Schema.define(version: 20130820180440) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20130820054545) do
     t.datetime "updated_at"
   end
 
+  create_table "central_schedules", force: true do |t|
+    t.string   "street"
+    t.string   "delivery_person"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "dorms", force: true do |t|
     t.string   "dorm_name"
     t.integer  "campus_id"
@@ -66,6 +75,7 @@ ActiveRecord::Schema.define(version: 20130820054545) do
     t.string   "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "room"
   end
 
   create_table "faqs", force: true do |t|
@@ -132,6 +142,15 @@ ActiveRecord::Schema.define(version: 20130820054545) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "category_id"
+  end
+
+  create_table "west_schedules", force: true do |t|
+    t.string   "dorm"
+    t.string   "delivery_person"
+    t.string   "start_time"
+    t.string   "end_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

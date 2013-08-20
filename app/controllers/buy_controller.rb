@@ -73,6 +73,13 @@ class BuyController < ApplicationController
 			@order.update(:user_id => name, :building => building, :room => room, :house => house, :email => email, :date => Date.today.strftime("%m/%d/%Y"), :time => Time.now.to_s(:time), :status => "undelivered", :cart_status => "confirmed", :delivery_date => delivery_date)
 			UserMailer.confirmation(@order).deliver
 			cookies.delete :id
+			if @order.campus == "East"
+				@dorm = East.where(:dorm => @order.building).first
+			elsif @order.campus == "West"
+				@dorm = WestSchedule.where(:dorm => @order.building).first
+			else 
+				@dorm = CentralSchedule.where(:street => @order.building).first
+			end
 		end
 	end
 end
