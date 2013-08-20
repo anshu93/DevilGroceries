@@ -215,7 +215,7 @@
 .cbp-vm-image {
 	display: block;
 	margin: 0 auto;
-	min-height: 140px;
+	#min-height: 140px;
 	vertical-align: middle;
 }
 
