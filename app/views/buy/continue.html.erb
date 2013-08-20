@@ -33,15 +33,7 @@ next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.to
 this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>th
 <% end %>
 <% if @order.campus == "East" %>
- in your dorm's common room between the times specified below:
-<div class="schedule">
-	<ul>
-	<% @schedules.each do |s| %>
-		<li class="schedule-row">
-			<%= s.dorm %>: <%= s.start_time %> to <%= s.end_time %>
-		</li>
-	<% end %>
-	</ul>
+In your common room
 <% else %>
 at your door.
 <% end %>

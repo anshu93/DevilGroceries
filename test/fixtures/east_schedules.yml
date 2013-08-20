@@ -2,10 +2,12 @@
 
 one:
   dorm: MyString
+  delivery_person: MyString
   start_time: MyString
   end_time: MyString
 
 two:
   dorm: MyString
+  delivery_person: MyString
   start_time: MyString
   end_time: MyString

@@ -45,7 +45,6 @@ class BuyController < ApplicationController
 			@total_price = @total_price + delta_price
 		end
 		@saved = total_duke_price
-		@schedules = East.all
 	    @order.update(:total => @total_price)
 	end
 
@@ -54,12 +53,19 @@ class BuyController < ApplicationController
 		name = params[:order][:user_id]
 		building = params[:building]
 		room = params[:order][:room]
+		email = params[:order][:email]
+
+		if params[:order][:room] != nil
+			room = params[:order][:room]
+		else
+			room = "N/A"
+		end
+
 		if params[:order][:house] != nil
 			house = params[:order][:house]
 		else
 			house = "N/A"
 		end
-		email = params[:order][:email]
 
 		if Time.now.saturday? or Time.now.sunday? 
 			delivery_date = Date.today.next_week.end_of_week
@@ -74,11 +80,11 @@ class BuyController < ApplicationController
 			UserMailer.confirmation(@order).deliver
 			cookies.delete :id
 			if @order.campus == "East"
-				@dorm = East.where(:dorm => @order.building).first
+				@dorm = EastSchedule.where(:dorm => @order.building).first
 			elsif @order.campus == "West"
 				@dorm = WestSchedule.where(:dorm => @order.building).first
 			else 
-				@dorm = CentralSchedule.where(:street => @order.building).first
+				@dorm = CentralSchedule.all.first
 			end
 		end
 	end
