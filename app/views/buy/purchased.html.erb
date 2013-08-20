@@ -21,7 +21,17 @@
 <div class="help-text">
 	<h1>Purchase Information</h1>
 	<div class="about-text">
-	
+
+	<% if @order.campus == "East" %>
+	You're on East!
+
+	<% elsif @order.campus == "West" %>
+	You're on West!
+
+	<% else %>
+	You're on Central!
+
+	<% end %>
 	</div>
 </div>
 

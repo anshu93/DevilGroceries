@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-	attr_accessible :id, :user_id, :campus, :building, :room, :email, :phone, :date, :time, :status, :cart_status, :total, :house
+	attr_accessible :id, :user_id, :campus, :building, :room, :email, :phone, :date, :time, :status, :cart_status, :total, :house, :delivery_date
 	has_many :items, :through => :orderitemrelations
 	has_many :orderitemrelations
 	ORDER_STATUS = ['DELIVERED', 'UNDELIVERED', 'ATTEMPTED']

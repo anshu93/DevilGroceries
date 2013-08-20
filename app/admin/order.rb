@@ -11,8 +11,7 @@ ActiveAdmin.register Order do
 		column :house
 		column :phone
 		column :email
-		column :date
-		column :time
+		column :delivery_date
 		column :total
 		column :status
 		column :cart_status
@@ -56,6 +55,7 @@ ActiveAdmin.register Order do
 				row("phone number") { order.phone }
 				row("time ordered") { order.time }
 				row("date ordered") { order.date }
+				row("date of delivery") { order.delivery_date }
 				row("status") { order.status }
 				row("subtotal") {number_to_currency(order.total, :precision => 2)}
 				row("delivery") {"+ $3.99"}

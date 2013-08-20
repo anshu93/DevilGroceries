@@ -59,11 +59,18 @@ class BuyController < ApplicationController
 		else
 			house = "N/A"
 		end
-		# phone = params[:order][:phone]
 		email = params[:order][:email]
+
+		if Time.now.saturday? or Time.now.sunday? 
+			delivery_date = Date.today.next_week.end_of_week
+		else
+			delivery_date = Date.today.end_of_week
+		end
+
+
 		if Order.exists?(id)
 			@order = Order.find(id)
-			@order.update(:user_id => name, :building => building, :room => room, :house => house, :email => email, :date => Date.today.strftime("%m/%d/%Y"), :time => Time.now.to_s(:time), :status => "undelivered", :cart_status => "confirmed")
+			@order.update(:user_id => name, :building => building, :room => room, :house => house, :email => email, :date => Date.today.strftime("%m/%d/%Y"), :time => Time.now.to_s(:time), :status => "undelivered", :cart_status => "confirmed", :delivery_date => delivery_date)
 			UserMailer.confirmation(@order).deliver
 			cookies.delete :id
 		end
