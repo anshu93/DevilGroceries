@@ -7,7 +7,7 @@
 		<div class="cbp-vm-details">
 			<% if item.duke_price.blank? %>
 			Not Available @ Duke
-			<% else %>
+			<% elsif item.selling_price < item.duke_price %>
 			Duke Equivalent: 
 			<strike class="strikethrough"><span class="duke-price"><%= number_to_currency(item.duke_price, :precision => 2) %></span></strike>
 			<% end %>

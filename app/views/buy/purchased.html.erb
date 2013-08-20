@@ -23,8 +23,12 @@
 	<div class="about-text">
 
 	<% if @order.campus == "East" %>
-	Please read the following delivery information carefully.<br>
-	You will receive you order on 
+	Your order has been processed successfully! <br><br>
+	Please read the following <b>delivery information</b> carefully.<br>
+	You will receive you order on Sunday (<%= @order.delivery_date.strftime("%m/%d/%Y") %>) at 
+
+		<% @dorm = Easts.where(:dorm => @order.building).first %>
+		<%= @dorm %>
 
 	<% elsif @order.campus == "West" %>
 	You're on West!
