@@ -22,13 +22,13 @@
 }
 
 .schedule ul {
-	margin-left: 20%;
+	margin-left: 35%;
 }
 
 .schedule ul li {
-	float: right;
+	float: left;
 	text-align: left;
-	display: inline;
+	display: block;
 	width: 40%;
 	margin-left: 10px;
 	margin-right: 10px;
@@ -307,10 +307,18 @@ input:focus::-ms-input-placeholder {
 	.nl-form {
 		font-size: 3em;
 	}
+
+	.schedule ul li {
+		width: 100%;
+	}
 }
 
 @media screen and (max-width: 25em) {
 	.nl-form {
 		font-size: 2em;
+	}
+
+	.schedule ul li{
+		width: 100%;
 	}
 }

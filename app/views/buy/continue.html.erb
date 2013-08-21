@@ -25,20 +25,48 @@
 
 <div class="help-text">
 <h1> CHECKOUT </h1>
-You may pick up your order 
+You will receive your order 
 
 <% if Time.now.saturday? or Time.now.sunday? %>
 next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %>th 
 <% else %>
 this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>th
 <% end %>
+
 <% if @order.campus == "East" %>
-In your common room
+ in your dorm's common room between the times specified below:
+<div class="schedule">
+	<ul>
+	<% @schedules.each do |s| %>
+		<li class="schedule-row">
+			<%= s.dorm %>: <%= s.start_time %> to <%= s.end_time %>
+		</li>
+	<% end %>
+	</ul>
+</div>
+
+<% elsif @order.campus == "West" %>
+ at your door between the following times:
+
+ <div class="schedule">
+	<ul>
+	<% @schedules.each do |s| %>
+		<li class="schedule-row">
+			<%= s.dorm %>: <%= s.start_time %> to <%= s.end_time %>
+		</li>
+	<% end %>
+	</ul>
+</div>
+
 <% else %>
-at your door.
+at your door between 
+<% @schedules.each do |s| %>
+	<%= s.start_time %> and <%= s.end_time %>.
 <% end %>
+<% end %>
+<br><br>Please email us at <b>devilgroceries@gmail.com</b> in case you will not be available during the delivery time.
 </div>
-</div>
+
 <%= form_for @order, :url => {:controller => "buy", :action => "purchased"}, :html => {:method => 'post', :id => "nl-form", :class => "nl-form"} do |f|%>
 	<%= f.hidden_field :order_id, :value => @order.id %>
 	My name is 

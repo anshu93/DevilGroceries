@@ -25,6 +25,7 @@
 	text-align: center;
 	margin-right: 8px;
 	max-height: 100%;
+	font-size: 20px;
 }
 
 /* General button style (reset) */
@@ -159,6 +160,16 @@
 	letter-spacing: 2px;
 	padding-bottom: 1em;
 	color: #081e4f;
+}
+
+.cart-dropdown h2 {
+	text-align: center;
+	margin: 0 auto;
+	font-size: 1em;
+	font-weight: 700;
+	letter-spacing: 2px;
+	padding-bottom: 1em;
+	color: #dd0000;
 }
 
 #cart-list > p {
