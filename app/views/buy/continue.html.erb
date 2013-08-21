@@ -64,7 +64,7 @@ at your door between
 	<%= s.start_time %> and <%= s.end_time %>.
 <% end %>
 <% end %>
-<br><br>Please email us at <b>devilgroceries@gmail.com</b> in case you will not be available during the delivery time.
+<br><br><br>Please email us at <b>devilgroceries@gmail.com</b> in case you will not be available during the delivery time.
 </div>
 
 <%= form_for @order, :url => {:controller => "buy", :action => "purchased"}, :html => {:method => 'post', :id => "nl-form", :class => "nl-form"} do |f|%>
@@ -83,7 +83,7 @@ at your door between
 	<%= select_tag(:building, options_for_select([["Craven", "Craven"],["Crowell","Crowell"],["Wannamaker","Wannamaker"],["Edens", "Edens"],["Few","Few"],["Kilgo","Kilgo"],["Keohane","Keohane"]])) %>
 	quad, room 
 	<%= f.text_field :room, {:placeholder => "number", "data-subline" => "eg. 230, 015, etc."} %>
-	<br>, and house/building 
+	<br>and house/building 
 	<%= f.text_field :house, {:placeholder => "number", "data-subline" => "eg. 1A, FF, VO, 4E, Wannamaker residents may leave blank "} %>
 
 
