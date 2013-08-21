@@ -169,7 +169,13 @@
 	font-weight: 700;
 	letter-spacing: 2px;
 	padding-bottom: 1em;
+	color: #001a57;
+	line-height: 25px;
+}
+
+.cart-dropdown .delivery-date {
 	color: #dd0000;
+	font-size: 1.2em;
 }
 
 #cart-list > p {
