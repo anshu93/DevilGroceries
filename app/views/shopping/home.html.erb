@@ -14,11 +14,11 @@
 				<a href='#' id = "close-button" data-remote="true" data-update-target="cart-count">close <i class="icon-remove"></i></a>
 			</p>
 			<h1>Shopping Cart</h1>
-			<h2 class="order-date">Order now to receive your groceries on
+			<h2 class="order-date">Order by this Saturday at 5 pm to receive your groceries on
 			<% if Time.now.saturday? or Time.now.sunday? %>
-			<div class="delivery-date">Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %>th</div> 
+			<div class="delivery-date">Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %></div> 
 			<% else %>
-			<div class="delivery-date">Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>th </div>
+			<div class="delivery-date">Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %> </div>
 			<% end %>
 		</h2>
 		</div>

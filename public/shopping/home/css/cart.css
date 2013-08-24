@@ -20,6 +20,11 @@
 	color: #001a57;
 }
 
+.order-total .subtotal {
+	font-size: 0.6em;
+	border-bottom: 2px solid #001a57;
+}
+
 .checkout-bar .min-order {
 	color: #001a57;
 	text-align: center;

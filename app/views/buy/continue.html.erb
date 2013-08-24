@@ -43,6 +43,7 @@ this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of
 		</li>
 	<% end %>
 	</ul>
+	<br><br>
 </div>
 
 <% elsif @order.campus == "West" %>
@@ -63,8 +64,9 @@ at your door between
 <% @schedules.each do |s| %>
 	<%= s.start_time %> and <%= s.end_time %>.
 <% end %>
+<br>
 <% end %>
-<br><br><br>Please email us at <b>devilgroceries@gmail.com</b> in case you will not be available during the delivery time.
+<div class="contact-para">Please email us at <b>devilgroceries@gmail.com</b> in case you will not be available during the delivery time.</div>
 </div>
 
 <%= form_for @order, :url => {:controller => "buy", :action => "purchased"}, :html => {:method => 'post', :id => "nl-form", :class => "nl-form"} do |f|%>

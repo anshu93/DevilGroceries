@@ -24,7 +24,11 @@
 </ul>
 <div class="checkout-bar">
 	<div class="order-total">
-	Subtotal: <%= number_to_currency(@total_price, :precision => 2) %><br>
+		<div class="subtotal">
+			Subtotal: <%= number_to_currency(@total_price, :precision => 2) %><br>
+			Delivery: + $3.99<br>
+		</div>
+	Total: <%= number_to_currency(@total_price + 3.99, :precision => 2) %>
 	<div class="saved-total">
 	<% if @saved.to_f > 5 %>
 	You save <%= number_to_currency(@saved, :precision => 2) %>
