@@ -38,8 +38,6 @@
 	font-size: 0.8em;
 }
 
-
-
 .help-text .about-text .answer {
 	margin-bottom: 10px;
 	display: none;
@@ -314,10 +312,18 @@ input:focus::-ms-input-placeholder {
 	.nl-form {
 		font-size: 3em;
 	}
+
+	.help-text .faq{
+		width: 100%;
+	}
 }
 
 @media screen and (max-width: 25em) {
 	.nl-form {
 		font-size: 2em;
+	}
+
+	.help-text .faq{
+		width: 100%;
 	}
 }

@@ -3,6 +3,6 @@ class UserMailer < ActionMailer::Base
   def confirmation(order)
   	@order = order
   	@list = @order.orderitemrelations
-  	mail(:to => order.email, :subject => "Confirmation Receipt")
+  	mail(:to => order.email, :subject => "Order Confirmation")
   end
 end

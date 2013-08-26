@@ -5,9 +5,9 @@
 Dear <%= @order.user_id %>, <br><br>
 This is your DevilGroceries receipt. Below is a summary of items purchased. You will receive your order 
 <% if Time.now.saturday? or Time.now.sunday? %>
-next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %>th 
+next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %>
 <% else %>
-this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>th
+this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>
 <% end %><br><br>
 
 
@@ -31,11 +31,11 @@ this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of
 
 <br>
 Subtotal: <%= number_to_currency(@order.total, :precision => 2) %><br> 
-Delivery Charge: + $3.99<br>
+Delivery: + $3.99<br>
 <b>Total: <%= number_to_currency(@order.total + 3.99, :precision => 2) %></b>
 <br><br>
-Thank you for your purchase!
+Thank you for your order!
 <br>
-The Groceries on Demand team
+The DevilGroceries team
 </body>
 </html>

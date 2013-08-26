@@ -56,7 +56,6 @@ ActiveAdmin.register Order do
 				row("time ordered") { order.time }
 				row("date ordered") { order.date }
 				row("date of delivery") { order.delivery_date }
-				row("status") { order.status }
 				row("subtotal") {number_to_currency(order.total, :precision => 2)}
 				row("delivery") {"+ $3.99"}
 				row("total") {number_to_currency(order.total + 3.99, :precision => 2)}

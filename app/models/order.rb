@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
 		id 
 	end	
 	# filter if applicable for this sunday
-	scope :date, -> {where("date < ? and date > ?", (Date.today.end_of_week - 1).strftime("%m/%d/%Y"), (Date.today.last_week.end_of_week - 2).strftime("%m/%d/%Y"))}
+	scope :date, -> {where("delivery_date == ?", (Date.today.end_of_week))}
 	# filter by east dorm
 	scope :alspaugh, -> {where(building: "Alspaugh")}
 	scope :aycock, -> {where(building: "Aycock")}

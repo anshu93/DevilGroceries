@@ -75,7 +75,17 @@ class BuyController < ApplicationController
 			house = "N/A"
 		end
 
-		if Time.now.saturday? or Time.now.sunday? 
+		t = Time.new(2013, 10, 31, 17, 00, 00).hour #Cutoff after 17:00 hrs
+
+		if Time.now.hour < t #Change to alter delivery date
+			cutoff = 1
+		else 
+			cutoff = 0
+		end
+
+		if Time.now.saturday? and cutoff == 1 		#If it's a saturday and before 5pm
+			delivery_date = Date.today.end_of_week
+		elsif Time.now.sunday? 
 			delivery_date = Date.today.next_week.end_of_week
 		else
 			delivery_date = Date.today.end_of_week

@@ -9,10 +9,8 @@ ActiveAdmin.register_page "West Orders" do
 						column :user_id do |order|
 							link_to order.user_id, admin_order_path(order)
 						end
-						column :building
 						column :room
-						column :date
-						column :time
+						column :total
 					end
 					strong { link_to "View All orders", admin_orders_path }
 				end
@@ -22,10 +20,8 @@ ActiveAdmin.register_page "West Orders" do
 						column :user_id do |order|
 							link_to order.user_id, admin_order_path(order)
 						end
-						column :building
 						column :room
-						column :date
-						column :time
+						column :total
 					end
 					strong { link_to "View All orders", admin_orders_path }
 				end
@@ -35,10 +31,8 @@ ActiveAdmin.register_page "West Orders" do
 						column :user_id do |order|
 							link_to order.user_id, admin_order_path(order)
 						end
-						column :building
 						column :room
-						column :date
-						column :time
+						column :total
 					end
 					strong { link_to "View All orders", admin_orders_path }
 				end
@@ -49,10 +43,8 @@ ActiveAdmin.register_page "West Orders" do
 						column :user_id do |order|
 							link_to order.user_id, admin_order_path(order)
 						end
-						column :building
 						column :room
-						column :date
-						column :time
+						column :total
 					end
 					strong { link_to "View All orders", admin_orders_path }
 				end
@@ -62,10 +54,8 @@ ActiveAdmin.register_page "West Orders" do
 						column :user_id do |order|
 							link_to order.user_id, admin_order_path(order)
 						end
-						column :building
 						column :room
-						column :date
-						column :time
+						column :total
 					end
 					strong { link_to "View All orders", admin_orders_path }
 				end
@@ -75,10 +65,8 @@ ActiveAdmin.register_page "West Orders" do
 						column :user_id do |order|
 							link_to order.user_id, admin_order_path(order)
 						end
-						column :building
 						column :room
-						column :date
-						column :time
+						column :total
 					end
 					strong { link_to "View All orders", admin_orders_path }
 				end
@@ -89,10 +77,8 @@ ActiveAdmin.register_page "West Orders" do
 						column :user_id do |order|
 							link_to order.user_id, admin_order_path(order)
 						end
-						column :building
 						column :room
-						column :date
-						column :time
+						column :total
 					end
 					strong { link_to "View All orders", admin_orders_path }
 				end
