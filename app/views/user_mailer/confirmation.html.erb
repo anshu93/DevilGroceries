@@ -8,8 +8,23 @@ This is your DevilGroceries receipt. Below is a summary of items purchased. You 
 next Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %>
 <% else %>
 this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %>
-<% end %><br><br>
+<% end %>
 
+<% if @order.campus == "East" %>
+. Please pick up your order in the <%= @dorm.dorm %> common room 
+	<% if @dorm.room != nil %>
+		number <%= @dorm.room %>
+	<% end %>
+between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>
+
+<% elsif @order.campus == "West" %>
+at your door between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>
+<% else %>
+at your door between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>
+
+
+<% end %>
+<br><br>
 
 <table style = "border: 1px solid black; text-align:center;">
 <tr>
