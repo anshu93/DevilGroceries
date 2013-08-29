@@ -20,7 +20,6 @@ Gro::Application.routes.draw do
 	match "buy/checkout" => "buy#checkout", via: [:get]
 	match "buy/purchased" => "buy#purchased", via: [:post]
 	match "buy/continue" => "buy#continue", via: [:post]
-	match "buy/error_continue" => "buy#error_continue", via: [:post]
 
 	match "dorm/for_dormid/:id" => "dorm#for_dormid", via: [:get]
 end
