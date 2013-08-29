@@ -24,7 +24,7 @@
 
 
 <div class="help-text">
-<h1> CHECKOUT </h1>
+<h1> CHECKOUT nadsjnsd</h1>
 You will receive your order 
 
 <% if Time.now.saturday? or Time.now.sunday? %>
@@ -88,13 +88,11 @@ at your door between
 	<br>and house/building 
 	<%= f.text_field :house, {:placeholder => "number", "data-subline" => "eg. 1A, FF, VO, 4E, Wannamaker residents may leave blank "} %>
 
-
 	<% elsif @order.campus == "Central" %>
 	I live near 
 	<%= select_tag(:building, options_for_select([["Alexander", "Alexander"],["Anderson","Anderson"],["Erwin","Erwin"],["Faber", "Faber"],["Lewis","Lewis"],["Swift","Swift"],["Mill Village","Mill Village"],["Devil's Den", "Devil's Den"],["Oregon","Oregon"],["Pace","Pace"],["Yearby","Yearby"]])) %>
 	 in apartment  
 	<%= f.text_field :room, {:placeholder => "number", "data-subline" => "eg. 201"} %>
-
 
 	<% end %>
 	<br>
