@@ -6,7 +6,7 @@
 <div class="container">
 		<!-- Header -->
 		<header class="clearfix">
-			<h1><a href="<%= root_path %>" class=""><img class="logo" src = "../logo.png"></img></a></h1>
+			<h1><a href="<%= root_path %>" class=""><img class="logo" src = "../logo_big.png"></img></a></h1>
 			<h1><img class="motto" src = "../motto.png"></img></h1>
 			<nav>
 				<a href="/" class="">Home</a>
@@ -25,7 +25,7 @@
 	<% if @order.campus == "East" %>
 	Your order has been processed successfully! <br><br>
 	Please carefully read the following <b>delivery information</b>:<br>
-	You may pick up your order on Sunday (<%= @order.delivery_date.strftime("%m/%d/%Y") %>) in <%= @dorm.dorm %>'s' common room 
+	You may pick up your order on Sunday (<%= @order.delivery_date.strftime("%m/%d/%Y") %>) in <%= @dorm.dorm %>'s common room 
 
 	<% if @dorm.room != nil %>
 	(<%= @dorm.room %>) 
