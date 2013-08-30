@@ -29,7 +29,6 @@ class BuyController < ApplicationController
 		if cookies[:id] != nil and Order.exists?(cookies[:id])
 			@order = Order.find(cookies[:id])
 			@list = @order.orderitemrelations
-
 		else
 			@list = 0
 		end
@@ -106,4 +105,6 @@ class BuyController < ApplicationController
 			end
 		end
 	end
+
+
 end

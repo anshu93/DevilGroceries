@@ -10,8 +10,8 @@ ActiveAdmin.register_page "Dashboard" do
 						column :campus
 						column :building
 						column :room
-						column :date
-						column :time
+						column :house
+						column :total
 					end
 					strong { link_to "View All orders", admin_orders_path }
 				end
