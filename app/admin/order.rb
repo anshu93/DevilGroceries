@@ -64,6 +64,7 @@ ActiveAdmin.register Order do
 				row("subtotal") {"-"}
 				row("delivery") {"-"}
 				row("total") {"-"}
+				end
 			end
 		end
 		panel "Ordered Items" do
