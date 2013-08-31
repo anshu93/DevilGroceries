@@ -19,7 +19,7 @@
 			<div class="delivery-date">Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %></div> 
 			<% elsif Time.now.saturday? %>
 				<% if Time.now.hour >= @t %>
-				<div class="delivery-date">sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %></div> 
+				<div class="delivery-date">Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %></div> 
 				<% else %>
 				<div class="delivery-date">Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %> </div>
 				<% end %>
