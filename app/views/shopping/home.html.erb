@@ -17,8 +17,12 @@
 			<h2 class="order-date">Order by this Saturday at 5 pm to receive your groceries on
 			<% if Time.now.sunday? %>
 			<div class="delivery-date">Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %></div> 
+			<% elsif Time.now.saturday? %>
+				<% if Time.now.hour > Time.new(2013, 10, 31, 17, 00, 00).hour %>
+				<div class="delivery-date">Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %></div> 
+				<% end %>
 			<% else %>
-			<div class="delivery-date">Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %> </div>
+				<div class="delivery-date">Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %> </div>
 			<% end %>
 		</h2>
 		</div>
