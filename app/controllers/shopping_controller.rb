@@ -29,7 +29,7 @@ class ShoppingController < ApplicationController
 	def cart #Activated when the add to cart button is pressed
 		if cookies[:id] != nil and Order.exists?(cookies[:id])
 		else
-			order_new = Order.create(:user_id => "NA", :campus => "NA", :building => "NA", :cart_status => "pending")
+			order_new = Order.create(:cart_status => "pending")
 			order_new.save
 			cookies[:id] = order_new.id
 		end

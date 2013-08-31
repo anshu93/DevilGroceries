@@ -2,10 +2,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"
 	<link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="continue/css/default.css" />
-	<link rel="stylesheet" type="text/css" href="continue/css/component.css" />
-	<script src="continue/js/modernizr.custom.js"></script>
-	<script src="continue/js/nlform.js"></script>
+	<link rel="stylesheet" type="text/css" href="refill/css/default.css" />
+	<link rel="stylesheet" type="text/css" href="refill/css/component.css" />
+	<script src="refill/js/modernizr.custom.js"></script>
+	<script src="refill/js/nlform.js"></script>
 </head>
 <body>
 
@@ -24,7 +24,9 @@
 
 
 <div class="help-text">
-<h1> CHECKOUT nadsjnsd</h1>
+<h1> CHECKOUT </h1>
+<div class="error-message">Please fill all information in the form below</div>
+
 You will receive your order 
 
 <% if Time.now.saturday? or Time.now.sunday? %>
@@ -88,15 +90,17 @@ at your door between
 	<br>and house/building 
 	<%= f.text_field :house, {:placeholder => "number", "data-subline" => "eg. 1A, FF, VO, 4E, Wannamaker residents may leave blank "} %>
 
+
 	<% elsif @order.campus == "Central" %>
 	I live near 
 	<%= select_tag(:building, options_for_select([["Alexander", "Alexander"],["Anderson","Anderson"],["Erwin","Erwin"],["Faber", "Faber"],["Lewis","Lewis"],["Swift","Swift"],["Mill Village","Mill Village"],["Devil's Den", "Devil's Den"],["Oregon","Oregon"],["Pace","Pace"],["Yearby","Yearby"]])) %>
 	 in apartment  
 	<%= f.text_field :room, {:placeholder => "number", "data-subline" => "eg. 201"} %>
 
+
 	<% end %>
 	<br>
-	You can contact me at
+	Please send a confirmation email with my delivery information to 
 	<%= f.text_field :email, {:placeholder => "email address", "data-subline" => "eg. user@example.com"} %>.
 	<br>
 	<%= button_tag "Place Order", {:class => "nl-submit"} %>

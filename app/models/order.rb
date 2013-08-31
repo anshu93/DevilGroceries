@@ -41,5 +41,5 @@ class Order < ActiveRecord::Base
 	scope :east, -> {where(campus: "East")}
 	scope :central, -> {where(campus: "Central")}
 
-	validates :user_id, :campus, :building, presence: true
+	# validates :user_id, :campus, :building, presence: true
 end

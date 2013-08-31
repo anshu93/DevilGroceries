@@ -55,8 +55,41 @@ class BuyController < ApplicationController
 	    end
 	end
 
+	def refill
+		id = cookies[:id]
+		@order = Order.find(id)
+		if @order.campus == "East"
+	    	@schedules = EastSchedule.all
+	    elsif @order.campus == "West"
+	    	@schedules = WestSchedule.all
+	    else
+	    	@schedules = CentralSchedule.all
+	    end
+	end
+
 	def purchased
 		id = params[:order][:order_id]
+		order = Order.find(id)
+		# Check name
+		if params[:order][:user_id] == ""
+			redirect_to :action => "refill" and return
+		end
+
+		# Check email
+		if params[:order][:email] == ""
+			redirect_to :action => "refill" and return
+		end
+
+		# Check house number
+		if params[:order][:house] == "" and order.campus == "West"
+			redirect_to :action => "refill" and return
+		end
+
+		# Check room number
+		if params[:order][:room] == "" and order.campus != "East"
+			redirect_to :action => 'refill' and return
+		end
+
 		name = params[:order][:user_id]
 		building = params[:building]
 		room = params[:order][:room]
