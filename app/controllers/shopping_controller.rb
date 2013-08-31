@@ -8,6 +8,8 @@ class ShoppingController < ApplicationController
 		else
 			@relation = 0
 		end
+		@t = Time.new(2013, 10, 31, 17, 00, 00).hour #Cutoff after 17:00 hrs
+
 	end
 
 	def result
