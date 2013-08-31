@@ -15,7 +15,7 @@
 			</p>
 			<h1>Shopping Cart</h1>
 			<h2 class="order-date">Order by this Saturday at 5 pm to receive your groceries on
-			<% if Time.now.saturday? or Time.now.sunday? %>
+			<% if Time.now.sunday? %>
 			<div class="delivery-date">Sunday, <%= Date.today.next_week.end_of_week.strftime('%B') %> <%=  Date.today.next_week.end_of_week.strftime('%d') %></div> 
 			<% else %>
 			<div class="delivery-date">Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of_week.strftime('%d') %> </div>
