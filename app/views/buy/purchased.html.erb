@@ -32,19 +32,19 @@
 	<% end %>
 
 	between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>.<br><br>
-	A confirmation email has been sent to the address you provided containing delivery instructions and a copy of the receipt. Please email us at devilgroceries@gmail.com if you have any questions.
+	A confirmation email has been sent to the address you provided containing delivery instructions and a copy of the receipt. Please email us at <a href = "mailto:devilgroceries@gmail.com"><b>devilgroceries@gmail.com</b></a> if you have any questions.
 
 	<% elsif @order.campus == "West" %>
 	Your order has been processed successfully! <br><br>
 	Please carefully read the following <b>delivery information</b>:<br>
 	You will receive your order at your door on Sunday (<%= @order.delivery_date.strftime("%m/%d/%Y") %>) between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>.<br><br>
-	A confirmation email has been sent to the address you provided containing delivery instructions and a copy of the receipt. Please email us at devilgroceries@gmail.com if you have any questions.
+	A confirmation email has been sent to the address you provided containing delivery instructions and a copy of the receipt. Please email us at <a href = "mailto:devilgroceries@gmail.com"><b>devilgroceries@gmail.com</b></a> if you have any questions.
 
 	<% else %>
 	Your order has been processed successfully! <br><br>
 	Please carefully read the following <b>delivery information</b>:<br>
 	You will receive your order at your door on Sunday (<%= @order.delivery_date.strftime("%m/%d/%Y") %>) between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>.<br><br>
-	A confirmation email has been sent to the address you provided containing delivery instructions and a copy of the receipt. Please email us at <a href = "mailto:devilgroceries@gmail.com">devilgroceries@gmail.com</a> if you have any questions.
+	A confirmation email has been sent to the address you provided containing delivery instructions and a copy of the receipt. Please email us at <a href = "mailto:devilgroceries@gmail.com"><b>devilgroceries@gmail.com</b></a> if you have any questions.
 
 	<% end %>
 	</div>
