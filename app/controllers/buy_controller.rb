@@ -117,6 +117,8 @@ class BuyController < ApplicationController
 
 		if Time.now.saturday? and cutoff == 1 		#If it's a saturday and before 5pm
 			delivery_date = Date.today.end_of_week
+		elsif Time.now.saturday? and cutoff == 0
+			delivery_date = Date.today.next_week.end_of_week
 		elsif Time.now.sunday? 
 			delivery_date = Date.today.next_week.end_of_week
 		else
