@@ -24,6 +24,13 @@
 	font-size: 1.2em;
 }
 
+.about-text a {
+	color: #000000;
+}
+
+.about-text a:hover {
+	color: #dd0000;
+}
 /* general style for the form */
 .nl-form {
 	font-weight: 300;

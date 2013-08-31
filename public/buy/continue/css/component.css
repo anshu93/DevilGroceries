@@ -45,6 +45,14 @@
 
 }
 
+.contact-para a {
+	color: #000000;
+}
+
+.contact-para a:hover {
+	color: #dd0000;
+}
+
 
 /* general style for the form */
 .nl-form {
