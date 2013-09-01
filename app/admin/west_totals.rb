@@ -66,6 +66,8 @@ ActiveAdmin.register_page "Total Items for WEST campus" do
 						table_for items_fresh_total do 
 							column :name 
 							column("Quantity") {quants_fresh_total.shift }
+							column :unit
+							column :supply_price
 						end
 					end
 
@@ -73,6 +75,8 @@ ActiveAdmin.register_page "Total Items for WEST campus" do
 						table_for items_total do 
 							column :name 
 							column("Quantity") {quants_total.shift }
+							column :unit
+							column :supply_price
 						end
 					end
 				end
