@@ -24,7 +24,7 @@
 
 <div class="help-text">
 <h1> CHECKOUT </h1>
-Your order total is <%= number_to_currency(@total_price, :precision => 2) %> <br> Fill out the form below and press "continue."
+Your order total is <%= number_to_currency(@total_price + 3.99, :precision => 2) %> <br> Fill out the form below and press "continue."
 </div>
 <%= form_for @order, :url => {:controller => "buy", :action => "continue"}, :html => {:method => 'post', :id => "nl-form", :class => "nl-form"} do |f|%>
 	<%= f.hidden_field :order_id, :value => @order.id %>
