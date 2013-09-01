@@ -10,6 +10,7 @@ class UserMailer < ActionMailer::Base
 		@dorm = CentralSchedule.all.first
 	end
   	@list = @order.orderitemrelations
-  	mail(:to => order.email, :subject => "Order Confirmation")
+    emailid = order.email + "@duke.edu"
+  	mail(:to => emailid, :subject => "Order Confirmation")
   end
 end
