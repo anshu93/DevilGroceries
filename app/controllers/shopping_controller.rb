@@ -20,10 +20,11 @@ class ShoppingController < ApplicationController
 		else
 			@item = Subcategory.find(params[:subcategory_id]).items.where(active: "active").order("RANDOM()")
 		end
+		items_per_page = 24 # maximum items to be displayed before pagination
 		unless @item.kind_of?(Array)
-			@item = @item.page(params[:page]).per(18)
+			@item = @item.page(params[:page]).per(items_per_page)
 		else
-			@item = Kaminari.paginate_array(@item).page(params[:page]).per(24)
+			@item = Kaminari.paginate_array(@item).page(params[:page]).per(items_per_page)
 		end
 		render :partial => 'result', :content_type => 'text/html'
 	end
