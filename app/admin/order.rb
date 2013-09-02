@@ -52,7 +52,7 @@ ActiveAdmin.register Order do
 				row("house") { order.house }
 				row("building") { order.building }
 				row("campus") { order.campus }
-				row("email address") { order.email }
+				row("email address") { order.email + "@duke.edu" }
 				row("phone number") { order.phone }
 				row("time ordered") { order.time }
 				row("date ordered") { order.date }
