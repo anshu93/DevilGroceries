@@ -23,7 +23,7 @@ class ShoppingController < ApplicationController
 		unless @item.kind_of?(Array)
 			@item = @item.page(params[:page]).per(18)
 		else
-			@item = Kaminari.paginate_array(@item).page(params[:page]).per(18)
+			@item = Kaminari.paginate_array(@item).page(params[:page]).per(24)
 		end
 		render :partial => 'result', :content_type => 'text/html'
 	end
