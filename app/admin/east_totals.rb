@@ -1,6 +1,6 @@
 ActiveAdmin.register_page "Total Items for EAST campus" do
 
-	content :title => proc{ "Item totals for west" } do
+	content :title => proc{ "Item totals for East" } do
 		orders = Order.date.cart_status.east
 		items_total = Array.new
 		quants_total = Array.new
