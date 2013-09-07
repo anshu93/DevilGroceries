@@ -86,7 +86,7 @@ class BuyController < ApplicationController
 		end
 
 		# Check room number
-		if params[:order][:room] == "" and order.campus != "East"
+		if params[:order][:room] == ""
 			redirect_to :action => 'refill' and return
 		end
 
@@ -98,7 +98,7 @@ class BuyController < ApplicationController
 		if params[:order][:room] != nil
 			room = params[:order][:room]
 		else
-			room = "N/A"
+			redirect_to :action => 'refill' and return
 		end
 
 		if params[:order][:house] != nil
@@ -141,5 +141,25 @@ class BuyController < ApplicationController
 		end
 	end
 
+
+	# def online_payment
+	# 	order = Order.find(cookies[:id])
+	# 	@amount = order.total
+	# 	customer = Stripe::Customer.create(
+	# 		:email => order.email + '@duke.edu'
+	# 		:card => params[:stripeToken]
+	# 	)
+
+	# 	charge = Stripe::Charge.create(
+	# 		:customer => customer.id
+	# 		:amount => @amount
+	# 		:description => "Rails stripe customer"
+	# 		:currency => 'usd'
+	# 	)
+
+	# rescue Stripe::CardError => e
+	# 	flash[:error] = e.message
+	# 	redirect_to charges_path	
+	# end
 
 end

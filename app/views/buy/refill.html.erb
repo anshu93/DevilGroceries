@@ -36,8 +36,9 @@ this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of
 <% end %>
 
 <% if @order.campus == "East" %>
- in your dorm's common room between the times specified below:
-<div class="schedule">
+ at your door between the following times:
+
+ <div class="schedule">
 	<ul>
 	<% @schedules.each do |s| %>
 		<li class="schedule-row">
@@ -45,7 +46,6 @@ this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of
 		</li>
 	<% end %>
 	</ul>
-	<br><br>
 </div>
 
 <% elsif @order.campus == "West" %>
@@ -80,7 +80,8 @@ at your door between
 	<% if @order.campus == "East" %>
 	, and I live in 
 	<%= select_tag(:building, options_for_select([["Alspaugh","Alspaugh"],["Aycock", "Aycock"],["Bassett","Bassett"],["Bell Tower", "Bell Tower"],["Blackwell","Blackwell"],["Brown","Brown"],["Epworth","Epworth"],["Gilbert-Addoms","Gilbert-Addoms"],["Giles","Giles"],["Jarvis","Jarvis"],["Pegram","Pegram"],["Randolph","Randolph"],["Southgate","Southgate"],["Wilson","Wilson"]])) %>
-	dorm.
+	dorm, room 
+	<%= f.text_field :room, {:placeholder => "number", "data-subline" => "eg. 230, 015, etc."} %>
 	
 	<% elsif @order.campus == "West" %>
 	, and I live in 
@@ -101,7 +102,7 @@ at your door between
 	<% end %>
 	<br>
 	Please send a confirmation email with my delivery information to 
-	<%= f.text_field :email, {:placeholder => "email address", "data-subline" => "eg. user@example.com"} %>.
+	<%= f.text_field :email, {:placeholder => "NetID", "data-subline" => "eg. abc123"} %>@duke.edu.
 	<br>
 	<%= button_tag "Place Order", {:class => "nl-submit"} %>
 </div>

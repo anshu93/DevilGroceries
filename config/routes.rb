@@ -21,6 +21,7 @@ Gro::Application.routes.draw do
 	match "buy/purchased" => "buy#purchased", via: [:post]
 	match "buy/continue" => "buy#continue", via: [:post]
 	match "buy/refill" => "buy#refill", via: [:get]
+	match "buy/online_payment" => "buy#online_payment", via: [:get]
 
 	match "dorm/for_dormid/:id" => "dorm#for_dormid", via: [:get]
 end

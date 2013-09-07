@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 gem 'turbolinks'
 gem 'jquery-rails'
 gem 'protected_attributes'
+gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
 
 group :development do
@@ -16,7 +17,6 @@ group :production do
 	gem 'pg'
 	gem 'thin'
 	gem 'rails_12factor'
-	#gem 'newrelic_rpm'
 end
 
 group :assets do

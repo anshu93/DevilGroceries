@@ -25,13 +25,7 @@
 	<% if @order.campus == "East" %>
 	Your order has been processed successfully! <br><br>
 	Please carefully read the following <b>delivery information</b>:<br>
-	You may pick up your order on Sunday (<%= @order.delivery_date.strftime("%m/%d/%Y") %>) in <%= @dorm.dorm %>'s common room 
-
-	<% if @dorm.room != nil %>
-	(<%= @dorm.room %>) 
-	<% end %>
-
-	between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>.<br><br>
+	You will receive your order at your door on Sunday (<%= @order.delivery_date.strftime("%m/%d/%Y") %>) between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>.<br><br>
 	A confirmation email has been sent to the address you provided containing delivery instructions and a copy of the receipt. Please email us at <a href = "mailto:devilgroceries@gmail.com"><b>devilgroceries@gmail.com</b></a> if you have any questions.
 
 	<% elsif @order.campus == "West" %>

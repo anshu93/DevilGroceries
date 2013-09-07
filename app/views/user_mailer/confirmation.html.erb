@@ -17,13 +17,7 @@ this Sunday, <%= Date.today.end_of_week.strftime('%B') %> <%=  Date.today.end_of
 <% end %>
 
 <% if @order.campus == "East" %>
-. Please pick up your order in <%= @dorm.dorm %>'s common room 
-	<% if @dorm.room != nil %>
-		<%= @dorm.room %>
-	<% else %>
-		common room 
-	<% end %>
-between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>
+at your door between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>
 
 <% elsif @order.campus == "West" %>
 at your door between <b><%= @dorm.start_time %></b> and <b><%= @dorm.end_time %></b>
