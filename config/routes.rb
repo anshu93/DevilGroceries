@@ -9,6 +9,7 @@ Gro::Application.routes.draw do
 	match "welcome/about" => "welcome#about", :via => [:get]
 	match "welcome/contact" => "welcome#contact", :via => [:get]
 	match "welcome/faqs" => "welcome#faqs", :via => [:get]
+	match "welcome/delivery_schedule" => "welcome#delivery_schedule", :via => [:get]
 
 	match "shopping/result" => "shopping#result", :via => [:get]
 	match "shopping/cart" => "shopping#cart", :via => [:get]
@@ -21,7 +22,7 @@ Gro::Application.routes.draw do
 	match "buy/purchased" => "buy#purchased", via: [:post]
 	match "buy/continue" => "buy#continue", via: [:post]
 	match "buy/refill" => "buy#refill", via: [:get]
-	match "buy/online_payment" => "buy#online_payment", via: [:get]
+	#match "buy/online_payment" => "buy#online_payment", via: [:get]
 
 	match "dorm/for_dormid/:id" => "dorm#for_dormid", via: [:get]
 end
