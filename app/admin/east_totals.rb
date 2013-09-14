@@ -25,7 +25,6 @@ ActiveAdmin.register_page "Total Items for EAST campus" do
 					hash_items_total = Hash[items_total.map.with_index.to_a]
 					index_total = hash_items_total[item]
 					quants_total[index_total] = quants_total[index_total] + quant_per_order[index_per_order]
-
 				end
 			end
 		end

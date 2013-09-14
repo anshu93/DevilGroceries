@@ -1,4 +1,6 @@
 class BuyController < ApplicationController
+	include ActiveMerchant::Billing
+
 	def checkout
 		if cookies[:id] != nil and Order.exists?(cookies[:id])
 			@order = Order.find(cookies[:id])
@@ -14,8 +16,8 @@ class BuyController < ApplicationController
 		@list.each do |relation|
 			delta_price = relation.quantity * relation.item.selling_price
 			if relation.item.duke_price != nil and relation.item.duke_price != 0
-			duke_delta_price = (relation.quantity * relation.item.duke_price) - delta_price
-			total_duke_price = total_duke_price + duke_delta_price
+				duke_delta_price = (relation.quantity * relation.item.duke_price) - delta_price
+				total_duke_price = total_duke_price + duke_delta_price
 			end
 			@total_price = @total_price + delta_price
 		end
@@ -39,32 +41,73 @@ class BuyController < ApplicationController
 		@list.each do |relation|
 			delta_price = relation.quantity * relation.item.selling_price
 			if relation.item.duke_price != nil and relation.item.duke_price != 0
-			duke_delta_price = (relation.quantity * relation.item.duke_price) - delta_price
-			total_duke_price = total_duke_price + duke_delta_price
+				duke_delta_price = (relation.quantity * relation.item.duke_price) - delta_price
+				total_duke_price = total_duke_price + duke_delta_price
 			end
 			@total_price = @total_price + delta_price
 		end
 		@saved = total_duke_price
-	    @order.update(:total => @total_price)
-	    if @order.campus == "East"
-	    	@schedules = EastSchedule.all
-	    elsif @order.campus == "West"
-	    	@schedules = WestSchedule.all
-	    else
-	    	@schedules = CentralSchedule.all
-	    end
+		@order.update(:total => @total_price)
+		if @order.campus == "East"
+			@schedules = EastSchedule.all
+		elsif @order.campus == "West"
+			@schedules = WestSchedule.all
+		else
+			@schedules = CentralSchedule.all
+		end
 	end
 
 	def refill
 		id = cookies[:id]
 		@order = Order.find(id)
 		if @order.campus == "East"
-	    	@schedules = EastSchedule.all
-	    elsif @order.campus == "West"
-	    	@schedules = WestSchedule.all
-	    else
-	    	@schedules = CentralSchedule.all
-	    end
+			@schedules = EastSchedule.all
+		elsif @order.campus == "West"
+			@schedules = WestSchedule.all
+		else
+			@schedules = CentralSchedule.all
+		end
+	end
+
+	def checkoutonline
+		setup_response = gateway.setup_purchase(100,
+			:ip                => request.remote_ip,
+			:return_url        => url_for(:action => 'purchased', :only_path => false),
+			:cancel_return_url => url_for(:action => 'purchased', :only_path => false),
+			:allow_guest_checkout => true
+			)
+		redirect_to gateway.redirect_url_for(setup_response.token)
+	end
+
+	def confirmonline
+		redirect_to :action => 'index' unless params[:token]
+
+		details_response = gateway.details_for(params[:token])
+
+		if !details_response.success?
+			@message = details_response.message
+			render :action => 'error'
+			return
+		end
+
+		@address = details_response.address
+	end
+
+	def completeonline
+		purchase = gateway.purchase(100,
+			:ip       => request.remote_ip,
+			:payer_id => params[:payer_id],
+			:token    => params[:token]
+			)
+
+		if !purchase.success?
+			@message = purchase.message
+			render :action => 'error'
+			return
+		end
+	end
+
+	def error
 	end
 
 	def purchased
@@ -141,25 +184,13 @@ class BuyController < ApplicationController
 		end
 	end
 
-
-	# def online_payment
-	# 	order = Order.find(cookies[:id])
-	# 	@amount = order.total
-	# 	customer = Stripe::Customer.create(
-	# 		:email => order.email + '@duke.edu'
-	# 		:card => params[:stripeToken]
-	# 	)
-
-	# 	charge = Stripe::Charge.create(
-	# 		:customer => customer.id
-	# 		:amount => @amount
-	# 		:description => "Rails stripe customer"
-	# 		:currency => 'usd'
-	# 	)
-
-	# rescue Stripe::CardError => e
-	# 	flash[:error] = e.message
-	# 	redirect_to charges_path	
-	# end
+	private
+	def gateway
+		@gateway ||= PaypalExpressGateway.new(
+			:login => 'anshuman.prasad93-facilitator_api1.gmail.com',
+			:password => '1378932413',
+			:signature => 'ALKH6Ea8.JV9q4Q8wITQUXNuHrhpAFj95lPw6Ung5CwejgErKEFe3SqK'
+			)
+	end
 
 end

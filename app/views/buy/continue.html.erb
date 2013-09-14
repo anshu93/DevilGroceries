@@ -110,6 +110,12 @@ at your door between
 	<%= f.text_field :email, {:placeholder => "NetID", "data-subline" => "eg. abc123"} %>@duke.edu.
 	<br>
 	<%= button_tag "Place Order", {:class => "nl-submit"} %>
+<script src="continue/js/paypal-button.min.js?merchant=anshuman.prasad93-facilitator@gmail.com"
+    data-button="buynow"
+    data-name="My product"
+    data-amount="1.00"
+    data-env="sandbox"
+></script>
 </div>
 	<div class="nl-overlay"></div>
 <% end %>
