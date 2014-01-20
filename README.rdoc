@@ -1,6 +1,6 @@
 www.devilgroceries.com
 
-This code is public and can be used as a template for anyone who would like to create an online ordering platform. 
+This code is open source and can be used as a template for anyone who would like to create an online ordering platform. 
 
 NEWS
 
@@ -10,8 +10,15 @@ http://www.brickmeetsclick.com/devilgroceries--online-grocery-shopping-on-campus
 
 WHAT'S GOING ON?
 
-This website was created to support a grocery delivery business at Duke University and would act as the online ordering platform and the backend for logistics. 
+This website was created to support a grocery delivery business at Duke University and would act as the online ordering platform and the backend for logistics. It was developed on RoR with Ruby 4.0.0
 
 GEMS
 
-The website uses 
+The backend was designed with the Active Admin gem (https://github.com/gregbell/active_admin)
+The gemfile can be checked for the other gems including "devise", "paperclip" and "kaminari"
+
+CURRENTLY
+
+The website is currently not being used as the business has been shut down. It is however, still fully operational and can be used as a template.
+
+
