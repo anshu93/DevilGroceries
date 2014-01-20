@@ -10,7 +10,7 @@ http://www.brickmeetsclick.com/devilgroceries--online-grocery-shopping-on-campus
 
 WHAT'S GOING ON?
 
-This website was created to support a grocery delivery business at Duke University and would act as the online ordering platform and the backend for logistics. It was developed on RoR with Ruby 4.0.0
+This website was created to support a grocery delivery business at Duke University and acted as the online ordering platform and the backend for logistics. It was developed on RoR with Ruby 4.0.0
 
 GEMS
 
